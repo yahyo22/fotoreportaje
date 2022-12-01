@@ -1,5 +1,5 @@
 import {Routes,Route,Navigate} from "react-router-dom"
-import Register from "../pages/register/Register"
+import Register from "../pages/auth/register/Register"
 
 // Components
 
