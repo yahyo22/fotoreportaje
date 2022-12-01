@@ -1,10 +1,25 @@
 import React from 'react'
 import styled from "styled-components";
-export default function Button({children}:any) {
+import { IButton } from '../../interface/interface';
+export default function Button({children,type}:IButton) {
   return (
-    <StyledButton>{children}</StyledButton>
+    <StyledButton type={type}>{children}</StyledButton>
   )
 }
 const StyledButton = styled.button`
-  
+cursor: pointer;
+width: 645px;
+padding: 17px 5px;
+border-radius: 0px;
+border: none;
+background: #333333;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 22px;
+text-align: center;
+color: #FFFFFF;
+  &:focus{
+    outline: none;
+  }
 `
