@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components"
 
 import "./font.css";
-import "./icons.css";
+import "./iconStyle.css";
 
 export const GlobalStyle = createGlobalStyle`
     * {
