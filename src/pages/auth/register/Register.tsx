@@ -36,7 +36,7 @@ export default function Register() {
           <Select />
         </div>
         <div className="input__wrapper">
-          <Button />
+          {/* <Button /> */}
         </div>
         <div className="input__wrapper">
           <p>
