@@ -4,7 +4,7 @@ import Button from '../../components/button/Button'
 export default function Login() {
   return (
     <div>
-      <Button>salom</Button>
+      <Button type='button'>Зарегистрироваться</Button>
     </div>
   )
 }
