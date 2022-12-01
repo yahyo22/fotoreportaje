@@ -1,9 +1,10 @@
 import React from 'react'
-
-export default function Button() {
+import styled from "styled-components";
+export default function Button({children}:any) {
   return (
-    <div>
-      
-    </div>
+    <StyledButton>{children}</StyledButton>
   )
 }
+const StyledButton = styled.button`
+  
+`

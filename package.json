@@ -11,7 +11,10 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@types/styled-components": "^5.1.26",
+<<<<<<< HEAD
+=======
     "@types/uuid": "^9.0.0",
+>>>>>>> 36f8f3cd7357790e1c18496e0afd06b6ddec2b05
     "cra-template-typescript": "1.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
