@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { v4 } from "uuid";
 
+// Interface
+import { IInput } from "../../interface/interface";
+
 export default function Input({ type, label, placeholder }: IInput) {
   const uuid: string = v4();
   return (
