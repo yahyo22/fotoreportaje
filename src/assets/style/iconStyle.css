@@ -1,0 +1,19 @@
+.icon {
+    display: inline-block;
+    min-width: 24px;
+    min-height: 24px;
+    color: #ccc !important;
+    background-color: #ccc !important;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-position: center;
+    -webkit-mask-position: center;
+  }
+  
+  .icon.icon-close {
+    mask-image: url("../icons/close.svg");
+    -webkit-mask-image: url("../icons/close.svg");
+  }
+  
