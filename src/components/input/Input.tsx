@@ -30,11 +30,12 @@ const StyledInput = styled.div`
       font-weight: 500;
       font-size: 18px;
       line-height: 22px;
+      color: #333;
     }
 
     &:hover,
     &:focus {
-      outline: none;
+      outline: 2px solid #333;
     }
   }
 `;

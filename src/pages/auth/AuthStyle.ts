@@ -1,14 +1,13 @@
 import styled from "styled-components";
 
 export const AuthStyle = styled.div`
-  padding: 0 16px;
+  padding: 125px 16px 170px;
   max-width: 899px;
   margin: 0 auto;
   background: #fff;
-  border: 1px solid red;
 
   .top {
-    margin: 125px 0px 100px;
+    margin-bottom: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -18,6 +17,13 @@ export const AuthStyle = styled.div`
       font-size: 50px;
       line-height: 61px;
       color: #333;
+    }
+
+    & > .icon {
+      cursor: pointer;
+      min-width: 37px;
+      min-height: 37px;
+      background-color: #000 !important;
     }
   }
   .form__wrapper {
