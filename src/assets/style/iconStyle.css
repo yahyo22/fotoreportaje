@@ -16,7 +16,6 @@
   mask-image: url("../icons/close.svg");
   -webkit-mask-image: url("../icons/close.svg");
 }
-<<<<<<< HEAD
 .icon.icon-search {
   mask-image: url("../icons/search.svg");
   -webkit-mask-image: url("../icons/search.svg");
@@ -31,11 +30,10 @@ width: 29.746984481811523px;
   -webkit-mask-image: url("../icons/profile.svg");
   background: #ffffff !important;
   height: 31.999996185302734px;
-  width: 29px;
-=======
+  width: 29px;}
+
 
 .icon.icon-like {
   mask-image: url("../icons/like.svg");
   -webkit-mask-image: url("../icons/like.svg");
->>>>>>> b4a329dcb8b52da6867907e256a35e1976981299
 }

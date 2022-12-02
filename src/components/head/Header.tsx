@@ -8,6 +8,9 @@ export default function Header() {
     <StyledHeader>
     <div className="container">
     <Navbar/>
+    <head>
+        
+    </head>
         </div>
     </StyledHeader>
   )

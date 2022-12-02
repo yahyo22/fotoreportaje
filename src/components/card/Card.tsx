@@ -25,10 +25,11 @@ const StyledCard = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  width: 450px;
-  height: 450px;
+  width: 430px;
+  height: 430px;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 53.65%, #000000 100%),
-    url(${cardImg});
+    url(${cardImg}), center no-repeat;
+    background-size: cover;
 
   .like__wrapper {
     padding: 10px 20px;
