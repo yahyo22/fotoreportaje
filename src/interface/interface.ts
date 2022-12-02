@@ -13,4 +13,5 @@ export interface ISelect {
 export interface IButton {
   type:"submit" | "button";
   children: React.ReactNode;
+  filter?: Boolean;
 }
