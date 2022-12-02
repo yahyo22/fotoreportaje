@@ -15,7 +15,8 @@ export default function Select({}: ISelect) {
 
   return (
     <StyledSelect>
-      <button type="button"
+      <button
+        type="button"
         className={(isOpen ? "On " : "") + "select"}
         onClick={() => setIsOpen((p) => !p)}
       >
@@ -65,7 +66,7 @@ const StyledSelect = styled.div`
       line-height: 22px;
       color: #333;
     }
-/* 
+    /* 
     &:before {
       content: "";
       position: fixed;
@@ -85,14 +86,18 @@ const StyledSelect = styled.div`
       transform: translateY(-50%);
       width: 0;
       height: 0;
-      border-left: 11px solid transparent;
-      border-right: 11px solid transparent;
-      border-top: 13px solid #333;
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      border-top: 12px solid #333;
       transition: 200ms ease-in-out;
     }
 
-    &.On:after {
-      transform: rotate(-180deg) translateY(50%);
+    &.On {
+      border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+
+      &:after {
+        transform: rotate(-180deg) translateY(50%);
+      }
     }
   }
 
