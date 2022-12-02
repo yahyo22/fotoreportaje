@@ -21,16 +21,16 @@ export default function Register() {
           <Input type="text" placeholder="Фамилия" />
         </div>
         <div className="input__wrapper">
-          <Input type="text" placeholder="E-mail" />
+          <Input type="email" placeholder="E-mail" />
         </div>
         <div className="input__wrapper">
-          <Input type="text" placeholder="Телефон " />
+          <Input type="tel" placeholder="Телефон " />
         </div>
         <div className="input__wrapper">
-          <Input type="text" placeholder="Пароль" />
+          <Input type="password" placeholder="Пароль" />
         </div>
         <div className="input__wrapper">
-          <Input type="text" placeholder="Подтверждение пароля" />
+          <Input type="password" placeholder="Подтверждение пароля" />
         </div>
         <div className="input__wrapper">
           <Select />

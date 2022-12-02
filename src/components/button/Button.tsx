@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from "styled-components";
 import { IButton } from '../../interface/interface';
 export default function Button({children,type}:IButton) {

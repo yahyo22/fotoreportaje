@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const AuthStyle = styled.div`
-  padding: 125px 16px 170px;
+  padding: 125px 16px 72px;
   max-width: 899px;
   margin: 0 auto;
   background: #fff;
@@ -48,6 +48,21 @@ export const AuthStyle = styled.div`
         text-align: center;
         color: #333;
       }
+    }
+  }
+
+  @media (max-width: 500px) {
+    .top {
+      h1 {
+        font-size: 30px;
+        line-height: 41px;
+      }
+    }
+  }
+
+  @media (max-width: 680px) {
+    .form__wrapper {
+      width: 100%;
     }
   }
 `;

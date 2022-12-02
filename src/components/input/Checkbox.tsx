@@ -1,9 +1,9 @@
-import * as React from 'react';
-import Checkbox from '@mui/material/Checkbox';
 import styled from 'styled-components';
-const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+import { Checkbox } from '@mui/material';
 
 export default function Checkboxes() {
+  const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
+  
   return (
     <Styled >
       <Checkbox {...label} defaultChecked id='c'/>

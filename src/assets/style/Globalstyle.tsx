@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
-import "./font.css"
+import "./font.css";
 import "./iconStyle.css";
 
 export const GlobalStyle = createGlobalStyle`
@@ -9,7 +9,18 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        text-decoration: none;
     }
-    .container{
+    
+    .container {
+        max-width: 1520px;
+        padding: 0px 16px;
+        margin: 0 auto;
+    }
+
+    ul {
+        list-style: none;
     }
 `;
