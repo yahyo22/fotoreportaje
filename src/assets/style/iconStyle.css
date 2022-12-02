@@ -37,3 +37,34 @@ width: 29.746984481811523px;
   mask-image: url("../icons/like.svg");
   -webkit-mask-image: url("../icons/like.svg");
 }
+
+.icon.icon-strelka{
+  mask-image: url("../icons/strelka.svg");
+  -webkit-mask-image: url("../icons/strelka.svg");
+  width: 44.5px !important;
+height: 12px !important; 
+padding: 0px !important;
+margin: 0px !important;
+}
+.icon.icon-VK{
+  mask-image: url("../icons/VK.svg");
+  -webkit-mask-image: url("../icons/VK.svg");
+  height: 16px;
+width: 28.043418884277344px;
+background: #FFFFFF;
+}
+.icon.icon-facebook{
+  mask-image: url("../icons/facebook.svg");
+  -webkit-mask-image: url("../icons/facebook.svg");
+  height: 25px;
+  width: 13.516275405883789px;
+background: #FFFFFF;
+}
+.icon.icon-google{
+  mask-image: url("../icons/google.svg");
+  -webkit-mask-image: url("../icons/google.svg");
+    height: 25px;
+    width: 13.516275405883789px;
+    background: #FFFFFF;
+  }
+

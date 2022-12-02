@@ -69,6 +69,7 @@ const StyledGrid = styled.div`
     grid-column-gap: 30px;
     grid-row-gap: 20px;
     grid-template-columns: 1fr 1fr 1fr;
+ 
   }
 `;
   

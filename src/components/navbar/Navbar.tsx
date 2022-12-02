@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 // logo
-import logo from "../../assets/img/logo.png";
+import logo from "../../assets/img/logo2.png";
 export default function () {
   const location = useLocation().pathname;
   console.log(location);
