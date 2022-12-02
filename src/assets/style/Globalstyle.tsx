@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     .container {
-        max-width: 1520px;
+        max-width: 1350px;
         padding: 0px 16px;
         margin: 0 auto;
     }
@@ -23,4 +23,5 @@ export const GlobalStyle = createGlobalStyle`
     ul {
         list-style: none;
     }
+    
 `;

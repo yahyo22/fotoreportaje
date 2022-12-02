@@ -1,19 +1,34 @@
 .icon {
-    display: inline-block;
-    min-width: 24px;
-    min-height: 24px;
-    color: #ccc !important;
-    background-color: #ccc !important;
-    mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
-    mask-size: contain;
-    -webkit-mask-size: contain;
-    mask-position: center;
-    -webkit-mask-position: center;
-  }
-  
-  .icon.icon-close {
-    mask-image: url("../icons/close.svg");
-    -webkit-mask-image: url("../icons/close.svg");
-  }
-  
+  display: inline-block;
+  min-width: 24px;
+  min-height: 24px;
+  color: #ccc !important;
+  background-color: #ccc !important;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  mask-position: center;
+  -webkit-mask-position: center;
+}
+
+.icon.icon-close {
+  mask-image: url("../icons/close.svg");
+  -webkit-mask-image: url("../icons/close.svg");
+}
+.icon.icon-search {
+  mask-image: url("../icons/search.svg");
+  -webkit-mask-image: url("../icons/search.svg");
+  background: #ffffff !important;
+  height: 30px;
+width: 29.746984481811523px;
+
+}
+
+.icon.icon-profile{
+  mask-image: url("../icons/profile.svg");
+  -webkit-mask-image: url("../icons/profile.svg");
+  background: #ffffff !important;
+  height: 31.999996185302734px;
+  width: 29px;
+}

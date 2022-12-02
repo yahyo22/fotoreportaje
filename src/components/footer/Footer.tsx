@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 // logo
-import logo from "../../assets/logo/logo.png";
+import logo from "../../assets/img/logo.png";
 
 export default function Footer() {
   return (
@@ -121,7 +121,7 @@ const StyledFooter = styled.footer`
     .right {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: center;  
       gap: 4px;
 
       & > .icon {
