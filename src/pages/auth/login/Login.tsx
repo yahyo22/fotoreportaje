@@ -46,6 +46,13 @@ const StyledLogin = styled.div`
       line-height: 61px;
       color: #333333;
     }
+    & > .icon {
+      cursor: pointer;
+      min-width: 37px;
+      min-height: 37px;
+      background-color: #000 !important;
+      transform: translateY(6px);
+    }
   }
   form {
     display: flex;
