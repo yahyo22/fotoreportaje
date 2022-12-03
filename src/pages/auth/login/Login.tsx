@@ -3,7 +3,9 @@ import Button from "../../../components/button/Button";
 import styled from "styled-components";
 import Input from "../../../components/input/Input";
 import Checkboxes from "../../../components/input/Checkbox";
+import { TabTitle } from "../../../utils/Utils";
 export default function Login() {
+  TabTitle("Login");
   return (
     <StyledLogin>
       <div className="top">

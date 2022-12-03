@@ -1,11 +1,13 @@
 import styled from "styled-components";
 
 // Components
-import Footer from "../../components/footer/Footer";
-import Establishment from "../../components/establishments/Establishment";
-import Header from "../../components/head/Header";
+import Footer from "../components/footer/Footer";
+import Establishment from "../components/cards/Cards";
+import Header from "../components/head/Header";
+import { TabTitle } from "../utils/Utils";
 
 export default function Home() {
+  TabTitle("Home")
   return (
     <StyledHome>
       <Header />

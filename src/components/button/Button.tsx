@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { IButton } from "../../interface/interface";
-export default function Button({ children, type ,icon }: IButton) {
+export default function Button({ children, type ,icon,filter }: IButton) {
 
 
   return (
   <>
-  <StyledButton type={type} className={icon ? 
-  'On':""}>
+  <StyledButton type={type} className={(icon ? 
+  'On':"")+ (filter ? " filter":"")}>
     {icon ?<div className={"icon " + icon}></div>: null}
     {children}</StyledButton>
   </>
@@ -46,5 +46,10 @@ position: relative;
     width: 1px;
     height: 100%;
     background-color: #4F4F4F;
+  }
+  
+  &.filter{ 
+background: #F8F8F8;
+color: #333333;
   }
 `;

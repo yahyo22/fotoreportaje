@@ -5,8 +5,10 @@ import { AuthStyle } from "../AuthStyle";
 import Input from "../../../components/input/Input";
 import Select from "../../../components/select/Select";
 import Button from "../../../components/button/Button";
+import { TabTitle } from "../../../utils/Utils";
 
 export default function Register() {
+  TabTitle("Register");
   return (
     <AuthStyle>
       <div className="top">
