@@ -11,15 +11,14 @@ export default function Select({}: ISelect) {
   const [currentValue, setCurrentValue] = useState<String>("Город");
 
   //
-  const list: Array<String> = ["Город", "Улица", "Округ", "Столица"];
+  const list:string[] = ["Город", "Улица", "Округ", "Столица"];
 
   return (
     <StyledSelect>
       <button
-        type="button"
-        className={(isOpen ? "On " : "") + "select"}
-        onClick={() => setIsOpen((p) => !p)}
-      >
+      type="button"
+      className={(isOpen ? "On " : "") + "select"}
+       onClick={() => setIsOpen((p) => !p)}>
         <span>{currentValue}</span>
       </button>
       {isOpen ? (

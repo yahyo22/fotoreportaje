@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 // logo
-import logo from "../../assets/logo/logo.png";
+import logo from "../../assets/img/logo.png";
 
 export default function Footer() {
   return (
@@ -52,9 +52,15 @@ export default function Footer() {
           </ul>
         </li>
         <li className="right">
-          <div className="icon twitter"></div>
-          <div className="icon instagram"></div>
-          <div className="icon facebook"></div>
+          <div className="icon-div">
+            <i className="icon icon-VK"></i>
+          </div>
+          <div className="icon-div">
+            <i className="icon icon-facebook"></i>
+          </div>
+          <div className="icon-div">
+            <i className="icon icon-google"></i>
+          </div>
         </li>
       </ul>
     </StyledFooter>
@@ -122,12 +128,18 @@ const StyledFooter = styled.footer`
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 4px;
+      gap: 14px;
 
-      & > .icon {
-        min-width: 50px;
-        min-height: 50px;
-        background-color: #333 !important;
+      .icon-div {
+        width: 46px;
+        height: 46px;
+        display: grid;
+        place-items: center;
+        background: #333;
+
+        & > .icon {
+          background: #fff !important;
+        }
       }
     }
   }

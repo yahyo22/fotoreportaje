@@ -16,8 +16,60 @@
   mask-image: url("../icons/close.svg");
   -webkit-mask-image: url("../icons/close.svg");
 }
+.icon.icon-search {
+  mask-image: url("../icons/search.svg");
+  -webkit-mask-image: url("../icons/search.svg");
+  background: #ffffff !important;
+  height: 30px;
+  width: 29.746984481811523px;
+}
+
+.icon.icon-profile {
+  mask-image: url("../icons/profile.svg");
+  -webkit-mask-image: url("../icons/profile.svg");
+  background: #ffffff !important;
+  height: 31.999996185302734px;
+  width: 29px;
+}
 
 .icon.icon-like {
   mask-image: url("../icons/like.svg");
   -webkit-mask-image: url("../icons/like.svg");
+}
+
+.icon.icon-instagram {
+  mask-image: url("../icons/instagram.svg");
+  -webkit-mask-image: url("../icons/instagram.svg");
+  height: 25px;
+  width: 13.516275405883789px;
+}
+
+.icon.icon-strelka {
+  mask-image: url("../icons/strelka.svg");
+  -webkit-mask-image: url("../icons/strelka.svg");
+  width: 44.5px !important;
+  height: 12px !important;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+.icon.icon-VK {
+  mask-image: url("../icons/VK.svg");
+  -webkit-mask-image: url("../icons/VK.svg");
+  height: 16px;
+  width: 28.043418884277344px;
+  background: #ffffff;
+}
+.icon.icon-facebook {
+  mask-image: url("../icons/facebook.svg");
+  -webkit-mask-image: url("../icons/facebook.svg");
+  height: 25px;
+  width: 13.516275405883789px;
+  background: #ffffff;
+}
+.icon.icon-google {
+  mask-image: url("../icons/google.svg");
+  -webkit-mask-image: url("../icons/google.svg");
+  height: 25px;
+  width: 13.516275405883789px;
+  background: #ffffff;
 }

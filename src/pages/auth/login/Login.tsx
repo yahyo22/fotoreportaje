@@ -21,9 +21,9 @@ export default function Login() {
         <span>Восстановить пароль</span>
         <span>Войти с помощью соц. сетей</span>
         <div className="social-buuton">
-          <Button type="button">Вконтакте</Button>
-          <Button type="button">Facebook</Button>
-          <Button type="button">Google</Button>
+          <Button type="button"icon="icon-VK">Вконтакте</Button>
+          <Button type="button" icon="icon-facebook">Facebook</Button>
+          <Button type="button"icon="icon-google">Google</Button>
         </div>
       </form>
     </StyledLogin>

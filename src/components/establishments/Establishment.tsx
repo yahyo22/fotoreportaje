@@ -1,12 +1,14 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 // Components
 import Button from "../button/Button";
 import Card from "../card/Card";
-import SimpleMap from "../map/Map";
 import Select from "../select/Select";
 
 export default function Establishment() {
+  const [btnSelectValue, setBtnSelectValue] = useState<string>("");
+
   return (
     <StyledGrid>
       <h1>Заведения</h1>
@@ -34,7 +36,6 @@ export default function Establishment() {
         <Card />
         <Card />
       </div>
-      <SimpleMap />
     </StyledGrid>
   );
 }
@@ -69,8 +70,8 @@ const StyledGrid = styled.div`
   .arts__wrapper {
     margin-top: 40px;
     display: grid;
-    grid-column-gap: 40px;
-    grid-row-gap: 30px;
+    grid-column-gap: 30px;
+    grid-row-gap: 20px;
     grid-template-columns: 1fr 1fr 1fr;
   }
 `;

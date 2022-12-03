@@ -1,30 +1,16 @@
-import GoogleMapReact from 'google-map-react';
-
-const AnyReactComponent = ({ text }:any) => <div>{text}</div>;
-
-export default function SimpleMap(){
-  const defaultProps = {
-    center: {
-      lat: 10.99835602,
-      lng: 77.01502627
-    },
-    zoom: 11
-  };
-
+export default function SimpleMap() {
   return (
-    // Important! Always set the container height explicitly
-    <div style={{ height: '100vh', width: '100%' }}>
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: "" }}
-        defaultCenter={defaultProps.center}
-        defaultZoom={defaultProps.zoom}
-      >
-        <AnyReactComponent
-          lat={59.955413}
-          lng={30.337844}
-          text="My Marker"
-        />
-      </GoogleMapReact>
+    <div className="mapouter">
+      <div className="gmap_canvas">
+        <iframe
+          className="gmap_iframe"
+          frameBorder="0"
+          width="700px"
+          height="381px"
+          scrolling="no"
+          src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=IT Park yashnobod&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+        ></iframe>
+      </div>
     </div>
   );
 }
