@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 // logo
 import logo2 from "../../assets/img/logo2.png";
 import logo from "../../assets/img/logo.png";
@@ -9,11 +9,11 @@ export default function ({props}:any) {
   console.log(location);
 
   return (
-    <StyledNavbar>
+    <StyledNavbar props={props}>
       <nav>
         <div>
-          {props ?
-          <img src={logo2} /> : <img src={logo} />}
+          {props ?<img src={logo} />
+         :  <img src={logo2} /> }
         </div>
         <div>
           <ul className="nav-list">
@@ -37,14 +37,21 @@ export default function ({props}:any) {
           </ul>
         </div>
         <div className="nav_icon">
-          <div className=" icon icon-search"></div>
+          {props ? <>
+          <div className="icon icon-profileblack"></div>
+          <div className=" icon icon-searchblack"></div>
+          </> :<>
           <div className="icon icon-profile"></div>
+          <div className=" icon icon-search"></div>
+          </>}
+        
         </div>
       </nav>
     </StyledNavbar>
   );
 }
-const StyledNavbar = styled.div`
+const StyledNavbar = styled.div<any>`
+
   nav {
     padding: 41px 0px;
     display: flex;
@@ -62,11 +69,19 @@ const StyledNavbar = styled.div`
         line-height: 22px;
         color: rgba(255, 255, 255, 0.8);
         cursor: pointer;
+
+        &:active{
+            color: #fff;
+        }
+        ${({props})=>{
+          if(props)  return css `color: #333;
+          
+        &:active{
+            color: black;
+        }`
+        }}
         }
         
-        a:active{
-            color: #ffffff;
-        }
         a.active {
           color: #ffffff;
           font-style: normal;

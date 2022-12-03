@@ -15,6 +15,8 @@ export default function Router() {
       <Route path="/main" element={<Main />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      
+      <Route path="/event/karta" element={<Zavedeniye/>} />
       <Route path="/event" element={<Events/>} />
       <Route path="/orderPhotographer" element={<OrderPhotographer />} />
       <Route path="*" element={<Navigate to="/login" />} />

@@ -73,3 +73,20 @@
   width: 13.516275405883789px;
   background: #ffffff;
 }
+
+.icon.icon-searchblack {
+  mask-image: url("../icons/searchblack.svg");
+  -webkit-mask-image: url("../icons/searchblack.svg");
+  height: 30px;
+  width: 29.746984481811523px;
+  background: #333333 !important;
+}
+
+.icon.icon-profileblack {
+  mask-image: url("../icons/profileblack.svg");
+  -webkit-mask-image: url("../icons/profileblack.svg");
+
+  background: #333333 !important;
+  height: 31.999996185302734px; 
+  width: 29px;
+}
