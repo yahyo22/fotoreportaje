@@ -66,7 +66,6 @@ const StyledGrid = styled.div`
       }
     }
   }
-
   .arts__wrapper {
     margin-top: 40px;
     display: grid;

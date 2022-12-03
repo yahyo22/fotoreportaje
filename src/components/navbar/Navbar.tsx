@@ -18,13 +18,13 @@ export default function ({props}:any) {
         <div>
           <ul className="nav-list">
             <li>
-              <Link to="/home">Главная</Link>
+              <Link to="/main" className={location === "/main" ? "active" : ""}>Главная</Link>
             </li>
             <li>
               <Link to="/zavedeniye">Заведения</Link>
             </li>
             <li>
-              <Link to="">События</Link>
+              <Link to="/event" className={location === "/event" ? "active" : ""}>События</Link>
             </li>
             <li>
               <Link to="">Фотоотчеты</Link>

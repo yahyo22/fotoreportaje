@@ -4,18 +4,18 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "../pages/auth/login/Login";
 import Register from "../pages/auth/register/Register";
 import OrderPhotographer from "../components/orderPhotographer/OrderPhotographer";
-import Home from "../pages/home/Home";
+import Main from "../pages/Main";
 import Navbar from "../components/navbar/Navbar";
 import Header from "../components/head/Header";
-import Zavedeniye from "../pages/zavegeniye/Zavedeniye";
-
+import Zavedeniye from "../pages/profile/Zavedeniye";
+import Events from "../pages/Events"
 export default function Router() {
   return (
     <Routes>  
-      <Route path="/home" element={<Home />} />
+      <Route path="/main" element={<Main />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/zavedeniye" element={<Zavedeniye/>} />
+      <Route path="/event" element={<Events/>} />
       <Route path="/orderPhotographer" element={<OrderPhotographer />} />
       <Route path="*" element={<Navigate to="/login" />} />
     </Routes>

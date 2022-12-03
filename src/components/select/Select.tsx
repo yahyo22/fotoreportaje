@@ -45,6 +45,8 @@ export default function Select({}: ISelect) {
 }
 
 const StyledSelect = styled.div`
+position: relative;
+
   .select {
     padding: 17px 15px;
     position: relative;
@@ -101,6 +103,8 @@ const StyledSelect = styled.div`
   }
 
   .select-modal {
+    position: absolute;
+    transform: translateY(2px);
     width: 100%;
     animation-name: openingModal;
     animation-duration: 200ms;
