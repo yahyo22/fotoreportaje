@@ -25,7 +25,7 @@ const StyledCard = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  width: 450px;
+  /* width: 450px; */
   height: 450px;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 53.65%, #000000 100%),
     url(${cardImg});

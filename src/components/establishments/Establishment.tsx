@@ -3,6 +3,7 @@ import styled from "styled-components";
 // Components
 import Button from "../button/Button";
 import Card from "../card/Card";
+import SimpleMap from "../map/Map";
 import Select from "../select/Select";
 
 export default function Establishment() {
@@ -33,6 +34,7 @@ export default function Establishment() {
         <Card />
         <Card />
       </div>
+      <SimpleMap />
     </StyledGrid>
   );
 }
@@ -52,6 +54,7 @@ const StyledGrid = styled.div`
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
+    flex-wrap: wrap;
     gap: 40px;
 
     .filter {
