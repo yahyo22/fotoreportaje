@@ -1,11 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 // Images
 import cardImg from "../../assets/img/card.png";
 
 export default function Card() {
+  const navigate = useNavigate();
+  
   return (
-    <StyledCard>
+    <StyledCard onClick={() => navigate("/event/karta/fotootchot")}>
       <div className="like__wrapper">
         <i className="icon icon-like"></i>
         <p>33</p>

@@ -9,6 +9,7 @@ import Navbar from "../components/navbar/Navbar";
 import Header from "../components/head/Header";
 import Zavedeniye from "../pages/profile/Zavedeniye";
 import Events from "../pages/Events"
+import CardAbout from "../components/cardAbout/CardAbout";
 export default function Router() {
   return (
     <Routes>  
@@ -18,6 +19,7 @@ export default function Router() {
       
       <Route path="/event/karta" element={<Zavedeniye/>} />
       <Route path="/event" element={<Events/>} />
+      <Route path="/event/karta/fotootchot" element={<CardAbout/>} />
       <Route path="/orderPhotographer" element={<OrderPhotographer />} />
       <Route path="*" element={<Navigate to="/login" />} />
     </Routes>
