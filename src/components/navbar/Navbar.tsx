@@ -2,8 +2,9 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 // logo
-import logo from "../../assets/img/logo2.png";
-export default function () {
+import logo2 from "../../assets/img/logo2.png";
+import logo from "../../assets/img/logo.png";
+export default function ({props}:any) {
   const location = useLocation().pathname;
   console.log(location);
 
@@ -11,15 +12,16 @@ export default function () {
     <StyledNavbar>
       <nav>
         <div>
-          <img src={logo} />
+          {props ?
+          <img src={logo2} /> : <img src={logo} />}
         </div>
         <div>
           <ul className="nav-list">
             <li>
-              <Link to="">Главная</Link>
+              <Link to="/home">Главная</Link>
             </li>
             <li>
-              <Link to="">Заведения</Link>
+              <Link to="/zavedeniye">Заведения</Link>
             </li>
             <li>
               <Link to="">События</Link>

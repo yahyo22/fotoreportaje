@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <StyledHeader>
       <div className="container">
-        <Navbar />
+        <Navbar props= {true} />
         <main>
           <p>АРТ ПРОСТРАНСТВО KLUMBA SPACE</p>
           <h1>Кавер-бэнд <br /> «В Главных ролях »</h1>
@@ -37,7 +37,7 @@ height: 100vh;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center !important;
-    
+
     p{
     font-style: normal;
 font-weight: 500;
