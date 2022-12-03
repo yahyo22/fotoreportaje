@@ -4,7 +4,9 @@ import styled from "styled-components";
 import Input from "../../../components/input/Input";
 import Checkboxes from "../../../components/input/Checkbox";
 import { TabTitle } from "../../../utils/Utils";
+import { useNavigate } from "react-router-dom";
 export default function Login() {
+  const navigate = useNavigate()
   TabTitle("Login");
   return (
     <StyledLogin>
@@ -17,7 +19,7 @@ export default function Login() {
         <Input placeholder="Логин / E-mail / Телефон" type="text" />
         <Checkboxes />
         <div className="wrapper-Button">
-          <Button type="button">Войти</Button>
+          <Button type="button" >Войти</Button>
           <Button type="button">Зарегистрироваться</Button>
         </div>
         <span>Восстановить пароль</span>
