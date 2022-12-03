@@ -6,6 +6,7 @@ import Button from "../../components/button/Button";
 import Footer from "../../components/footer/Footer";
 import Kalendar from "../../components/kalendar/Kalendar";
 import SimpleMap from "../../components/map/Map";
+import SocialNetwork from "../../components/social-network/SocialNetwork";
 export default function Zavedeniye() {
   return (
     <StyledZavedeliye>
@@ -63,20 +64,7 @@ export default function Zavedeniye() {
                 </div>
                 <div className="social">
                   <h2>Соц. сети</h2>
-                  <div className="social__wrapper">
-                    <div className="icon-div">
-                      <i className="icon icon-VK"></i>
-                    </div>
-                    <div className="icon-div">
-                      <i className="icon icon-facebook"></i>
-                    </div>
-                    <div className="icon-div">
-                      <i className="icon icon-google"></i>
-                    </div>
-                    <div className="icon-div">
-                      <i className="icon icon-instagram"></i>
-                    </div>
-                  </div>
+                  <SocialNetwork />
                 </div>
               </div>
             </div>
@@ -189,25 +177,6 @@ const StyledZavedeliye = styled.div`
             p {
               margin-top: 5px;
               font-weight: 500;
-            }
-
-            .social__wrapper {
-              margin-top: 15px;
-              display: flex;
-              align-items: center;
-              gap: 18px;
-
-              .icon-div {
-                width: 46px;
-                height: 46px;
-                display: grid;
-                place-items: center;
-                background: #333;
-
-                & > .icon {
-                  background: #fff !important;
-                }
-              }
             }
           }
         }
