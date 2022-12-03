@@ -11,7 +11,7 @@ export default function Events() {
   TabTitle("event");
   return (
     <StyledEvent>
-      <Header />
+      <Header props={false} />
       <div className="container">
         <div className="center">
           <h1>События</h1>

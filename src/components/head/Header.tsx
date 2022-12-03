@@ -3,11 +3,11 @@ import styled from "styled-components";
 // imges
 import Rockstar from "../../assets/img/Rockstar.png";
 import Navbar from "../navbar/Navbar";
-export default function Header() {
+export default function Header({props}:any) {
   return (
     <StyledHeader>
       <div className="container">
-        <Navbar props= {true} />
+        <Navbar props={props} />
         <main>
           <p>АРТ ПРОСТРАНСТВО KLUMBA SPACE</p>
           <h1>Кавер-бэнд <br /> «В Главных ролях »</h1>

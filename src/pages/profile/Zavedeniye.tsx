@@ -11,7 +11,7 @@ export default function Zavedeniye() {
   return (
     <StyledZavedeliye>
       <div className="container">
-        <Navbar props={false} />
+        <Navbar props={true} />
         <main>
           <div>
             <img src={Kottabola} alt="" />
