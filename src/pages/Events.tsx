@@ -32,7 +32,7 @@ export default function Events() {
               <Select list={[""]} placeholder="Дата" />
             </div>
             <div className="filter">
-              <Select list={locationArr} />
+              <Select list={locationArr} placeholder="Поиск по местам" multiple={true} />
             </div>
             <div className="button">
               <div className="first">

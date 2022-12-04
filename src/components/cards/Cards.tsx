@@ -31,7 +31,11 @@ export default function Establishment() {
       <h1>Заведения</h1>
       <div className="filter__wrapper">
         <div className="filter">
-          <Select list={categoriesArr} placeholder="Поиск по категориям" />
+          <Select
+            list={categoriesArr}
+            placeholder="Поиск по категориям"
+            multiple={true}
+          />
         </div>
         <div className="filter">
           <Select list={sortArr} placeholder="Сортировка" />

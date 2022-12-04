@@ -7,6 +7,7 @@ export interface IInput {
 export interface ISelect {
   list: Array<String>;
   placeholder?: string;
+  multiple?: Boolean;
 }
 
 export interface IButton {

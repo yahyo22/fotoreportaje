@@ -5,7 +5,11 @@ import { v4 } from "uuid";
 // Interface
 import { ISelect } from "../../interface/interface";
 
-export default function Select({ list, placeholder }: ISelect) {
+export default function Select({
+  list,
+  placeholder,
+  multiple = false,
+}: ISelect) {
   const uuid: string = v4();
   const [isOpen, setIsOpen] = useState<Boolean>(false);
   const [currentValue, setCurrentValue] = useState<String>(
@@ -22,10 +26,13 @@ export default function Select({ list, placeholder }: ISelect) {
         <span>{currentValue}</span>
       </button>
       {isOpen ? (
-        <div className="select-modal">
+        <div className={(multiple ? "multiple " : "") + "select-modal"}>
           <ul>
             {list.map((i: String) => (
-              <li key={uuid} className={currentValue === i ? "clicked" : ""}>
+              <li
+                key={uuid}
+                className={multiple && currentValue === i ? "clicked" : ""}
+              >
                 <button
                   type="button"
                   onClick={() => {
@@ -130,7 +137,7 @@ const StyledSelect = styled.div`
           font-weight: 500;
           font-size: 18px;
           line-height: 22px;
-          color: #3333338d;
+          color: #333;
           text-align: start;
           transition: 200ms;
 
@@ -140,33 +147,43 @@ const StyledSelect = styled.div`
             background: #333;
           }
         }
+      }
+    }
 
-        &.clicked {
+    &.multiple {
+      ul {
+        li {
           & > button {
-            position: relative;
-            color: #333;
+            color: #3333338d;
+          }
 
-            &::before {
-              content: "";
-              position: absolute;
-              top: 50%;
-              right: 30px;
-              width: 8px;
-              height: 14px;
-              border-bottom: 1.5px solid #333;
-              border-right: 1.5px solid #333;
-              transform: translateY(-50%) rotate(45deg);
-            }
-
-            &:hover,
-            &:focus {
-              color: #fff;
-              background: #333;
+          &.clicked {
+            & > button {
+              position: relative;
+              color: #333;
 
               &::before {
-              border-bottom: 1.5px solid #fff;
-              border-right: 1.5px solid #fff;
-            }
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 30px;
+                width: 8px;
+                height: 14px;
+                border-bottom: 1.5px solid #333;
+                border-right: 1.5px solid #333;
+                transform: translateY(-50%) rotate(45deg);
+              }
+
+              &:hover,
+              &:focus {
+                color: #fff;
+                background: #333;
+
+                &::before {
+                  border-bottom: 1.5px solid #fff;
+                  border-right: 1.5px solid #fff;
+                }
+              }
             }
           }
         }
@@ -185,6 +202,7 @@ const StyledSelect = styled.div`
     /* scroll */
     ::-webkit-scrollbar {
       width: 5px;
+      background: #f8f8f8;
     }
     ::-webkit-scrollbar-thumb {
       background: rgba(51, 51, 51, 0.1);
