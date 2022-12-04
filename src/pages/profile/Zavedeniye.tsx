@@ -1,12 +1,15 @@
-import React from "react";
-import Navbar from "../../components/navbar/Navbar";
 import styled from "styled-components";
+
+// Images
 import Kottabola from "../../assets/img/Kottabola.png";
+
+// Components
+import SimpleMap from "../../components/map/Map";
+import Navbar from "../../components/navbar/Navbar";
 import Button from "../../components/button/Button";
 import Footer from "../../components/footer/Footer";
-import Kalendar from "../../components/kalendar/Kalendar";
-import SimpleMap from "../../components/map/Map";
 import SocialNetwork from "../../components/social-network/SocialNetwork";
+
 export default function Zavedeniye() {
   return (
     <StyledZavedeliye>
@@ -14,7 +17,7 @@ export default function Zavedeniye() {
         <Navbar props={true} />
         <main>
           <div>
-            <img src={Kottabola} alt="" />
+            <img src={Kottabola} alt="Заведения" />
           </div>
           <div className="right">
             <p>Вечеринки • Концерты</p>
@@ -64,7 +67,14 @@ export default function Zavedeniye() {
                 </div>
                 <div className="social">
                   <h2>Соц. сети</h2>
-                  <SocialNetwork />
+                  <SocialNetwork
+                    socialArr={[
+                      "icon-VK",
+                      "icon-facebook",
+                      "icon-google",
+                      "icon-instagram",
+                    ]}
+                  />
                 </div>
               </div>
             </div>
@@ -79,20 +89,26 @@ const StyledZavedeliye = styled.div`
   main {
     display: flex;
     align-items: flex-start;
-    gap: 35px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 
     img {
-      width: 700px;
-      height: 460px;
+      width: 670px;
+      height: 430px;
     }
+
     .right {
+      max-width: 550px;
+
       p {
         font-style: normal;
         font-weight: 500;
         font-size: 18px;
         line-height: 17px;
         margin-bottom: 15px;
-        color: #333333;
+        color: #333;
+
         &:first-of-type {
           font-size: 14px;
           margin-bottom: 10px;
@@ -103,7 +119,7 @@ const StyledZavedeliye = styled.div`
         font-weight: 700;
         font-size: 26px;
         line-height: 130%;
-        color: #000000;
+        color: #000;
         margin-bottom: 40px;
       }
 
@@ -111,6 +127,7 @@ const StyledZavedeliye = styled.div`
         margin-top: 40px;
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 20px;
 
         .button__wrapper {
@@ -150,14 +167,15 @@ const StyledZavedeliye = styled.div`
         line-height: 36px;
         letter-spacing: 0em;
         text-align: left;
-        color: #000000;
+        color: #000;
       }
 
       .contacts__wrapper {
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;
-        gap: 35px;
+        flex-wrap: wrap;
+        gap: 20px;
 
         .contacts {
           display: flex;
@@ -177,6 +195,66 @@ const StyledZavedeliye = styled.div`
             p {
               margin-top: 5px;
               font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 680px) {
+    main {
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+      .right {
+        max-width: 100%;
+
+        p {
+          font-size: 14px;
+
+          &:first-of-type {
+            font-size: 12px;
+          }
+        }
+
+        h1 {
+          font-size: 24px;
+        }
+
+        .buttons__wrapper {
+          gap: 30px;
+
+          .button__wrapper {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    section {
+      .event {
+        h1 {
+          font-size: 22px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+      .map {
+        h1 {
+          font-size: 22px;
+        }
+
+        .contacts__wrapper {
+          .contacts {
+            & > div {
+              h2,
+              p {
+                font-size: 16px;
+              }
             }
           }
         }

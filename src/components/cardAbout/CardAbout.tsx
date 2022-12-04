@@ -47,7 +47,14 @@ export default function CardAbout() {
               <div className="contacts">
                 <h2>Контакты:</h2>
                 <p>+7 999 999 9090</p>
-                <SocialNetwork />
+                <SocialNetwork
+                  socialArr={[
+                    "icon-VK",
+                    "icon-facebook",
+                    "icon-google",
+                    "icon-instagram",
+                  ]}
+                />
               </div>
             </div>
           </div>

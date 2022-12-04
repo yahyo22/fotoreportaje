@@ -1,5 +1,3 @@
-
-
 export interface IInput {
   type: string;
   label?: string;
@@ -7,12 +5,13 @@ export interface IInput {
 }
 
 export interface ISelect {
-
+  list: Array<String>;
+  placeholder?: string;
 }
 
 export interface IButton {
-  type:"submit" | "button";
+  type: "submit" | "button";
   children: React.ReactNode;
   filter?: Boolean;
-  icon?:string;
+  icon?: string;
 }
