@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 // Images
@@ -10,6 +11,8 @@ import Navbar from "../navbar/Navbar";
 import SocialNetwork from "../social-network/SocialNetwork";
 
 export default function CardAbout() {
+  const [btnFilter, setBtnFilter] = useState<String>("Фотоотчеты");
+
   return (
     <StyledCardAbout>
       <div className="container">
@@ -61,10 +64,22 @@ export default function CardAbout() {
         </div>
         <div className="buttons__wrapper">
           <div className="button">
-            <Button type="button">Фотоотчеты</Button>
+            <Button
+              type="button"
+              filter={true}
+              btnFilter={btnFilter}
+              onClick={() => setBtnFilter("Фотоотчеты")}
+            >
+              Фотоотчеты
+            </Button>
           </div>
           <div className="button">
-            <Button type="button" filter={true}>
+            <Button
+              type="button"
+              filter={true}
+              btnFilter={btnFilter}
+              onClick={() => setBtnFilter("События")}
+            >
               События
             </Button>
           </div>

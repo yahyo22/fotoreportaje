@@ -18,7 +18,7 @@ export default function Footer() {
             <p>Советский проспект 34</p>
             <div className="contact">
               <p>
-                <a href="http://Limon.agency@yandex.ru">
+                <a href="mailto:Limon.agency@yandex.ru">
                   Limon.agency@yandex.ru
                 </a>
               </p>
@@ -77,6 +77,16 @@ const StyledFooter = styled.footer`
     flex-wrap: wrap;
 
     .left {
+      & > a {
+        border-bottom: 2px solid #3330;
+        transition: 190ms;
+
+        &:hover,
+        &:focus {
+          outline: none;
+          border-bottom: 2px solid #333;
+        }
+      }
       .location,
       .contact {
         margin-top: 30px;
@@ -91,6 +101,14 @@ const StyledFooter = styled.footer`
           font-size: 16px;
           line-height: 20px;
           color: #242426;
+          border-bottom: 1.5px solid #3330;
+          transition: 190ms;
+
+          &:hover,
+          &:focus {
+            outline: none;
+            border-bottom: 1.5px solid #333;
+          }
         }
       }
 
@@ -117,6 +135,14 @@ const StyledFooter = styled.footer`
             font-size: 16px;
             line-height: 20px;
             color: #333;
+            border-bottom: 1.5px solid #3330;
+            transition: 190ms;
+
+            &:hover,
+            &:focus {
+              outline: none;
+              border-bottom: 1.5px solid #333;
+            }
           }
         }
       }

@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { v4 } from "uuid";
 
 export default function SocialNetwork({ socialArr }: any) {
   return (
     <StyledSocial>
       {socialArr.map((i:string) => (
-        <div className="icon-div">
+        <div className="icon-div" key={v4()}>
           <i className={"icon " + i}></i>
         </div>
       ))}

@@ -1,14 +1,18 @@
-import React from "react";
+import { useState } from "react";
 import styled from "styled-components";
-import Button from "../components/button/Button";
+
+// Components
 import Card from "../components/card/Card";
-import Establishment from "../components/cards/Cards";
-import Footer from "../components/footer/Footer";
 import Header from "../components/head/Header";
 import Select from "../components/select/Select";
+import Button from "../components/button/Button";
+import Footer from "../components/footer/Footer";
+
 import { TabTitle } from "../utils/Utils";
+
 export default function Events() {
   TabTitle("Event");
+  const [btnFilter, setBtnFilter] = useState<String>("Платно");
 
   //
   const locationArr: Array<string> = [
@@ -32,16 +36,20 @@ export default function Events() {
               <Select list={[""]} placeholder="Дата" />
             </div>
             <div className="filter">
-              <Select list={locationArr} placeholder="Поиск по местам" multiple={true} />
+              <Select
+                list={locationArr}
+                placeholder="Поиск по местам"
+                multiple={true}
+              />
             </div>
             <div className="button">
               <div className="first">
-                <Button type="button" filter={false}>
+                <Button type="button" filter={true} btnFilter={btnFilter} onClick={() => setBtnFilter("Платно")}>
                   Платно
                 </Button>
               </div>
               <div className="last">
-                <Button type="button" filter={true}>
+                <Button type="button" filter={true} btnFilter={btnFilter} onClick={() => setBtnFilter("Бесплатно")}>
                   Бесплатно
                 </Button>
               </div>

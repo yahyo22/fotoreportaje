@@ -1,16 +1,29 @@
 import styled from "styled-components";
+
+// Interface
 import { IButton } from "../../interface/interface";
-export default function Button({ children, type, icon, filter }: IButton) {
+
+export default function Button({
+  children,
+  type,
+  icon,
+  filter,
+  btnFilter,
+  onClick,
+}: IButton) {
   return (
-    <>
-      <StyledButton
-        type={type}
-        className={(icon ? "On" : "") + (filter ? " filter" : "")}
-      >
-        {icon ? <div className={"icon " + icon}></div> : null}
-        {children}
-      </StyledButton>
-    </>
+    <StyledButton
+      type={type}
+      className={
+        (btnFilter === children ? "On-filter " : "") +
+        (icon ? "On" : "") +
+        (filter ? " filter" : "")
+      }
+      onClick={onClick}
+    >
+      {icon ? <div className={"icon " + icon}></div> : null}
+      {children}
+    </StyledButton>
   );
 }
 const StyledButton = styled.button`
@@ -20,7 +33,7 @@ const StyledButton = styled.button`
   padding: 17px 5px;
   border-radius: 0px;
   border: none;
-  background: #333333;
+  background: #333;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -58,6 +71,16 @@ const StyledButton = styled.button`
     &:hover,
     &:focus {
       outline: 2px solid #333;
+    }
+
+    &.On-filter {
+      background: #333;
+      color: #fff;
+
+      &:hover,
+      &:focus {
+        outline: 2px solid #333;
+      }
     }
   }
 `;

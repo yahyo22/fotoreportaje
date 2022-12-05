@@ -7,7 +7,7 @@ import Card from "../card/Card";
 import Select from "../select/Select";
 
 export default function Establishment() {
-  const [btnSelectValue, setBtnSelectValue] = useState<string>("");
+  const [btnFilter, setBtnFilter] = useState<String>("");
 
   //
   const categoriesArr: Array<string> = [
@@ -41,7 +41,14 @@ export default function Establishment() {
           <Select list={sortArr} placeholder="Сортировка" />
         </div>
         <div className="filter">
-          <Button type="button" filter={true}>
+          <Button
+            type="button"
+            filter={true}
+            btnFilter={btnFilter}
+            onClick={() =>
+              btnFilter ? setBtnFilter("") : setBtnFilter("Сейчас открыто")
+            }
+          >
             Сейчас открыто
           </Button>
         </div>

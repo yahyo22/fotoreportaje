@@ -39,7 +39,7 @@ export default function Register() {
           <Input type="password" placeholder="Подтверждение пароля" />
         </div>
         <div className="input__wrapper">
-          <Select list={registrArr} />
+          <Select list={registrArr} placeholder="Город" />
         </div>
         <div className="input__wrapper">
           <Button type="submit">Зарегистрироваться</Button>

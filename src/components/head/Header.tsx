@@ -63,12 +63,14 @@ const StyledHeader = styled.div`
       margin-top: 10px;
       margin-bottom: 30px;
     }
+
     .route {
       a {
         cursor: pointer;
         display: flex;
         align-items: center;
         gap: 15px;
+
         p {
           font-style: normal;
           font-weight: 700;
@@ -79,6 +81,15 @@ const StyledHeader = styled.div`
           transform: translateY(-2px);
           margin: 0;
           padding: 0;
+        }
+
+        border-bottom: 2px solid #fff0;
+        transition: 190ms;
+
+        &:hover,
+        &:focus {
+          outline: none;
+          border-bottom: 2px solid #fff;
         }
       }
     }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { v4 } from "uuid";
 
@@ -10,11 +10,53 @@ export default function Select({
   placeholder,
   multiple = false,
 }: ISelect) {
-  const uuid: string = v4();
   const [isOpen, setIsOpen] = useState<Boolean>(false);
-  const [currentValue, setCurrentValue] = useState<String>(
-    placeholder || "Выбирайте"
+  const [currentValue, setCurrentValue] = useState<String>(placeholder);
+  const [currentMultiplValue, setCurrentMultiplValue] = useState<Array<String>>(
+    [placeholder]
   );
+
+  function selectClick(i: String) {
+    if (multiple) {
+      let newList: Array<String> = [];
+      if (currentMultiplValue.length > 0) {
+        newList = currentMultiplValue.filter((j: String) =>
+          placeholder !== j ? true : false
+        );
+        setCurrentMultiplValue(newList);
+        newList = [];
+      }
+      if (currentMultiplValue.includes(i)) {
+        newList = currentMultiplValue.filter((j: String) =>
+          i !== j ? true : false
+        );
+        setCurrentMultiplValue(newList);
+      } else {
+        setCurrentMultiplValue((p: Array<String>) => [...p, i]);
+      }
+    } else {
+      setCurrentValue(i);
+      setIsOpen(false);
+    }
+  }
+
+  function multipleValues() {
+    let newList: String = "";
+    currentMultiplValue.map((i: String, idx) => {
+      if (currentMultiplValue.length - 1 === idx) {
+        newList += i + "";
+      } else {
+        newList += i + ", ";
+      }
+    });
+    return newList;
+  }
+
+  useEffect(() => {
+    if (currentMultiplValue.length < 1) {
+      setCurrentMultiplValue((p: Array<String>) => [...p, placeholder]);
+    }
+  }, [currentMultiplValue]);
 
   return (
     <StyledSelect>
@@ -23,23 +65,19 @@ export default function Select({
         className={(isOpen ? "On " : "") + "select"}
         onClick={() => setIsOpen((p) => !p)}
       >
-        <span>{currentValue}</span>
+        <span>{multiple ? multipleValues() : currentValue}</span>
       </button>
       {isOpen ? (
         <div className={(multiple ? "multiple " : "") + "select-modal"}>
           <ul>
             {list.map((i: String) => (
               <li
-                key={uuid}
-                className={multiple && currentValue === i ? "clicked" : ""}
+                key={v4()}
+                className={
+                  multiple && currentMultiplValue.includes(i) ? "clicked" : ""
+                }
               >
-                <button
-                  type="button"
-                  onClick={() => {
-                    setCurrentValue(i);
-                    setIsOpen(false);
-                  }}
-                >
+                <button type="button" onClick={() => selectClick(i)}>
                   {i}
                 </button>
               </li>
@@ -143,6 +181,7 @@ const StyledSelect = styled.div`
 
           &:hover,
           &:focus {
+            outline: none;
             color: #fff;
             background: #333;
           }
@@ -155,6 +194,13 @@ const StyledSelect = styled.div`
         li {
           & > button {
             color: #3333338d;
+
+            &:hover,
+            &:focus {
+              outline: none;
+              color: #fff;
+              background: #333;
+            }
           }
 
           &.clicked {
@@ -176,6 +222,7 @@ const StyledSelect = styled.div`
 
               &:hover,
               &:focus {
+                outline: none;
                 color: #fff;
                 background: #333;
 

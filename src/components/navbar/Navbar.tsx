@@ -5,6 +5,7 @@ import styled, { css } from "styled-components";
 // logo
 import logo2 from "../../assets/img/logo2.png";
 import logo from "../../assets/img/logo.png";
+import mobileLogo from "../../assets/img/mobileLogo.png";
 
 export default function ({ props }: any) {
   const location = useLocation().pathname;
@@ -17,9 +18,14 @@ export default function ({ props }: any) {
   return (
     <StyledNavbar props={props}>
       <nav>
-        <div>
+        <div className="logo-brand">
           <Link to="/main">
-            {props ? <img src={logo} /> : <img src={logo2} />}
+            <div className="mobile-logo__wrapper"></div>
+            {props ? (
+              <img src={logo} alt="brand-logo" />
+            ) : (
+              <img src={logo2} alt="brand-logo" />
+            )}
           </Link>
         </div>
         <div className={(isOpen ? "On " : "") + "nav-modal__wrapper"}></div>
@@ -78,6 +84,23 @@ const StyledNavbar = styled.div<any>`
     align-items: center;
     justify-content: space-between;
 
+    .logo-brand {
+      a {
+        .mobile-logo__wrapper {
+          display: none;
+        }
+
+        border-bottom: 2px solid #fff0;
+        transition: 190ms;
+
+        &:hover,
+        &:focus {
+          outline: none;
+          border-bottom: 2px solid #fff;
+        }
+      }
+    }
+
     .nav-list {
       display: flex;
       align-items: center;
@@ -106,6 +129,15 @@ const StyledNavbar = styled.div<any>`
                 }
               `;
           }}
+
+          border-bottom: 2px solid #fff0;
+          transition: 190ms;
+
+          &:hover,
+          &:focus {
+            outline: none;
+            border-bottom: 2px solid #fff;
+          }
         }
 
         a.active {
@@ -294,6 +326,28 @@ const StyledNavbar = styled.div<any>`
           right: 50%;
           transform: translateX(50%);
           z-index: 12;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
+    nav {
+      .logo-brand {
+        margin: 10px 0px 0px 10px;
+
+        & > a {
+          .mobile-logo__wrapper {
+            display: block;
+            width: 30px;
+            height: 33px;
+            background: url(${mobileLogo}), no-repeat center;
+            background-size: cover;
+          }
+
+          & > img {
+            display: none;
+          }
         }
       }
     }
