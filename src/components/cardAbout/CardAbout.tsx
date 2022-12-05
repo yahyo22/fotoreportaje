@@ -108,6 +108,7 @@ const StyledCardAbout = styled.div`
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
+      flex-wrap: wrap;
       gap: 35px;
 
       .card-images__wrapper {
@@ -119,7 +120,7 @@ const StyledCardAbout = styled.div`
         .image-card {
           width: 600px;
           height: 500px;
-          background: url(${cardImg}), no-repeat center;
+          background: url(${cardImg}) no-repeat center;
           background-size: cover;
         }
 
@@ -133,7 +134,7 @@ const StyledCardAbout = styled.div`
           .card-img {
             width: 140px;
             height: 140px;
-            background: url(${cardImg}), no-repeat center;
+            background: url(${cardImg}) no-repeat center;
             background-size: cover;
           }
         }
@@ -222,6 +223,7 @@ const StyledCardAbout = styled.div`
       display: flex;
       align-items: center;
       justify-content: flex-start;
+      flex-wrap: wrap;
       gap: 40px;
 
       .button {
@@ -236,8 +238,120 @@ const StyledCardAbout = styled.div`
     .arts__wrapper {
       margin-bottom: 100px;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: auto auto auto;
       grid-gap: 30px;
+    }
+  }
+
+  @media (max-width: 830px) {
+    .container {
+      .current-photo {
+        .card-images__wrapper {
+          flex-wrap: wrap;
+          gap: 25px;
+
+          .more-images {
+            grid-template-rows: 1fr;
+            grid-template-columns: auto auto auto;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 650px) {
+    .container {
+      .current-photo {
+        .card-images__wrapper {
+          width: 100%;
+
+          .image-card {
+            width: 100%;
+            height: 450px;
+          }
+
+          .more-images {
+            grid-template-rows: 1fr;
+            grid-template-columns: auto auto auto;
+            height: auto;
+            grid-gap: 20px;
+
+            .card-img {
+              width: 130px;
+              height: 130px;
+            }
+          }
+        }
+
+        .card-about__wrapper {
+          .content {
+            h6 {
+              font-size: 14px;
+              line-height: 17px;
+            }
+
+            h1 {
+              font-size: 45px;
+              line-height: 54px;
+            }
+
+            div {
+              h2,
+              p {
+                font-size: 17px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 515px) {
+    .container {
+      .current-photo {
+        margin: 20px 0px 60px;
+
+        .card-images__wrapper {
+          width: 100%;
+
+          .image-card {
+            width: 100%;
+            height: 350px;
+          }
+
+          .more-images {
+            gap: 15px;
+
+            .card-img {
+              width: 80px;
+              height: 80px;
+            }
+          }
+        }
+
+        .card-about__wrapper {
+          .content {
+            h6 {
+              font-size: 12px;
+              line-height: 14px;
+            }
+
+            h1 {
+              font-size: 35px;
+              line-height: 44px;
+            }
+
+            div {
+              h2,
+              p {
+                font-size: 15px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 `;

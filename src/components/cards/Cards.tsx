@@ -96,13 +96,9 @@ const StyledGrid = styled.div`
   }
   .arts__wrapper {
     margin-top: 40px;
-    /* display: grid;
+    display: grid;
     grid-column-gap: 30px;
     grid-row-gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr; */
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 `;

@@ -104,8 +104,8 @@ const StyledFooter = styled.footer`
           border-bottom: 1.5px solid #3330;
           transition: 190ms;
 
-          &:hover,
-          &:focus {
+          &:not(p):hover,
+          &:not(p):focus {
             outline: none;
             border-bottom: 1.5px solid #333;
           }
