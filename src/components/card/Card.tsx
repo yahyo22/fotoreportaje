@@ -14,8 +14,8 @@ export default function Card() {
         <p>33</p>
       </div>
       <div className="art-content">
-        <h6>АРТ ПРОСТРАНСТВО</h6>
-        <h2>Klumba space</h2>
+        <h6 className="">АРТ ПРОСТРАНСТВО</h6>
+        <h2>Klumba space</h2> 
         <p>Кузнецкий проспект, 55 +7 999 999 9090</p>
       </div>
     </StyledCard>
