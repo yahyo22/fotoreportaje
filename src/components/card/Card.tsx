@@ -6,7 +6,7 @@ import cardImg from "../../assets/img/card.png";
 
 export default function Card() {
   const navigate = useNavigate();
-  
+
   return (
     <StyledCard onClick={() => navigate("/event/karta/fotootchot")}>
       <div className="like__wrapper">
@@ -28,8 +28,11 @@ const StyledCard = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  height: 450px;
-  width: 100%;
+  /* max-width: 430px; */
+  /* min-width: 320px; */
+  /* width: auto; */
+  /* width: 100%; */
+  width: 430px;
   height: 430px;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 53.65%, #000000 100%),
     url(${cardImg}), center no-repeat;
@@ -42,7 +45,7 @@ const StyledCard = styled.div`
     align-items: center;
     gap: 10px;
     width: max-content;
-    background: #333333;
+    background: #333;
 
     & > .icon {
       min-width: 16px;

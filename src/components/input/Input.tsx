@@ -54,6 +54,10 @@ const StyledInput = styled.div`
     &:focus {
       outline: 2px solid #333;
     }
+
+    &[type="password"] {
+      padding: 17px 46px 17px 15px;
+    }
   }
 
   .icon {

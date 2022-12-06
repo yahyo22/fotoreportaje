@@ -26,6 +26,7 @@ export const AuthStyle = styled.div`
       background-color: #000 !important;
     }
   }
+
   .form__wrapper {
     display: flex;
     flex-direction: column;
@@ -52,7 +53,11 @@ export const AuthStyle = styled.div`
   }
 
   @media (max-width: 500px) {
+  padding: 70px 16px 60px;
+
     .top {
+      margin-bottom: 70px;
+
       h1 {
         font-size: 30px;
         line-height: 41px;

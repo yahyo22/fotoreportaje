@@ -1,20 +1,24 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 // logo
 import logo from "../../assets/img/logo.png";
+import SocialNetwork from "../social-network/SocialNetwork";
 
 export default function Footer() {
   return (
     <StyledFooter>
       <ul className="lists__wrapper">
         <li className="left">
-          <img src={logo} alt="logo" />
+          <Link to="/main">
+            <img src={logo} alt="logo" />
+          </Link>
           <div className="location">
             <p>Кемерово</p>
             <p>Советский проспект 34</p>
             <div className="contact">
               <p>
-                <a href="http://Limon.agency@yandex.ru">
+                <a href="mailto:Limon.agency@yandex.ru">
                   Limon.agency@yandex.ru
                 </a>
               </p>
@@ -27,40 +31,34 @@ export default function Footer() {
         <li className="center">
           <ul>
             <li>
-              <a href="#">Главная</a>
+              <Link to="/main">Главная</Link>
             </li>
             <li>
-              <a href="#">Заведения</a>
+              <Link to="/event/karta">Заведения</Link>
             </li>
             <li>
-              <a href="#">События</a>
+              <Link to="/event">События</Link>
             </li>
             <li>
-              <a href="#">Фотоотчеты</a>
+              <Link to="/event/karta/fotootchot">Фотоотчеты</Link>
             </li>
           </ul>
           <ul>
             <li>
-              <a href="#">Заказать фотосъемку</a>
+              <Link to="/orderPhotographer">Заказать фотосъемку</Link>
             </li>
             <li>
-              <a href="#">Вакансии</a>
+              <Link to="#">Вакансии</Link>
             </li>
             <li>
-              <a href="#">Пользовательское соглашение</a>
+              <Link to="#">Пользовательское соглашение</Link>
             </li>
           </ul>
         </li>
         <li className="right">
-          <div className="icon-div">
-            <i className="icon icon-VK"></i>
-          </div>
-          <div className="icon-div">
-            <i className="icon icon-facebook"></i>
-          </div>
-          <div className="icon-div">
-            <i className="icon icon-google"></i>
-          </div>
+          <SocialNetwork
+            socialArr={["icon-VK", "icon-facebook", "icon-google"]}
+          />
         </li>
       </ul>
     </StyledFooter>
@@ -79,6 +77,16 @@ const StyledFooter = styled.footer`
     flex-wrap: wrap;
 
     .left {
+      & > a {
+        border-bottom: 2px solid #3330;
+        transition: 190ms;
+
+        &:hover,
+        &:focus {
+          outline: none;
+          border-bottom: 2px solid #333;
+        }
+      }
       .location,
       .contact {
         margin-top: 30px;
@@ -93,6 +101,14 @@ const StyledFooter = styled.footer`
           font-size: 16px;
           line-height: 20px;
           color: #242426;
+          border-bottom: 1.5px solid #3330;
+          transition: 190ms;
+
+          &:not(p):hover,
+          &:not(p):focus {
+            outline: none;
+            border-bottom: 1.5px solid #333;
+          }
         }
       }
 
@@ -119,28 +135,21 @@ const StyledFooter = styled.footer`
             font-size: 16px;
             line-height: 20px;
             color: #333;
+            border-bottom: 1.5px solid #3330;
+            transition: 190ms;
+
+            &:hover,
+            &:focus {
+              outline: none;
+              border-bottom: 1.5px solid #333;
+            }
           }
         }
       }
     }
 
     .right {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-
-      .icon-div {
-        width: 46px;
-        height: 46px;
-        display: grid;
-        place-items: center;
-        background: #333;
-
-        & > .icon {
-          background: #fff !important;
-        }
-      }
+      margin-top: -15px;
     }
   }
 `;

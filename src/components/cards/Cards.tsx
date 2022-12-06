@@ -7,20 +7,48 @@ import Card from "../card/Card";
 import Select from "../select/Select";
 
 export default function Establishment() {
-  const [btnSelectValue, setBtnSelectValue] = useState<string>("");
+  const [btnFilter, setBtnFilter] = useState<String>("");
+
+  //
+  const categoriesArr: Array<string> = [
+    "Кафе",
+    "Бары",
+    "Рестораны",
+    "Ночные клубы",
+    "Арт пространства",
+    "Speak easy bar",
+    "Общественные пространства",
+  ];
+  //
+  const sortArr: Array<string> = [
+    "Популярное",
+    "От А до Я, от A до Z",
+    "От Я до А, от Z до A",
+  ];
 
   return (
     <StyledGrid>
       <h1>Заведения</h1>
       <div className="filter__wrapper">
         <div className="filter">
-          <Select />
+          <Select
+            list={categoriesArr}
+            placeholder="Поиск по категориям"
+            multiple={true}
+          />
         </div>
         <div className="filter">
-          <Select />
+          <Select list={sortArr} placeholder="Сортировка" />
         </div>
         <div className="filter">
-          <Button type="button" filter={true}>
+          <Button
+            type="button"
+            filter={true}
+            btnFilter={btnFilter}
+            onClick={() =>
+              btnFilter ? setBtnFilter("") : setBtnFilter("Сейчас открыто")
+            }
+          >
             Сейчас открыто
           </Button>
         </div>

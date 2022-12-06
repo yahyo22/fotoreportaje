@@ -9,6 +9,10 @@ import { TabTitle } from "../../../utils/Utils";
 
 export default function Register() {
   TabTitle("Register");
+
+  //
+  const registrArr: Array<string>  = ["Город", "Улица", "Округ", "Столица"];
+
   return (
     <AuthStyle>
       <div className="top">
@@ -35,7 +39,7 @@ export default function Register() {
           <Input type="password" placeholder="Подтверждение пароля" />
         </div>
         <div className="input__wrapper">
-          <Select />
+          <Select list={registrArr} placeholder="Город" />
         </div>
         <div className="input__wrapper">
           <Button type="submit">Зарегистрироваться</Button>

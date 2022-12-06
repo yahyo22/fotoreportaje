@@ -18,16 +18,28 @@ export default function Login() {
         <Input placeholder="Логин / E-mail / Телефон" type="text" />
         <Input placeholder="Логин / E-mail / Телефон" type="text" />
         <Checkboxes />
+<<<<<<< HEAD
         <div className="wrapper-Button">
           <Button type="button" onClick={()=>navigate("/main")}>Войти</Button>
           <Button type="button" onClick={()=>navigate("/register")}>Зарегистрироваться</Button>
+=======
+        <div className="buttons__wrapper">
+          <Button type="button">Войти</Button>
+          <Button type="button">Зарегистрироваться</Button>
+>>>>>>> d87c9e2d1fe7b0dc8cb30e5a32d7a31b4fe2f09e
         </div>
         <span>Восстановить пароль</span>
         <span>Войти с помощью соц. сетей</span>
-        <div className="social-buuton">
-          <Button type="button"icon="icon-VK">Вконтакте</Button>
-          <Button type="button" icon="icon-facebook">Facebook</Button>
-          <Button type="button"icon="icon-google">Google</Button>
+        <div className="social-button">
+          <Button type="button" icon="icon-VK">
+            Вконтакте
+          </Button>
+          <Button type="button" icon="icon-facebook">
+            Facebook
+          </Button>
+          <Button type="button" icon="icon-google">
+            Google
+          </Button>
         </div>
       </form>
     </StyledLogin>
@@ -39,17 +51,20 @@ const StyledLogin = styled.div`
   margin: 0 auto;
   background: #fff;
   margin-bottom: 140px;
+
   .top {
     margin: 125px 0px 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     h1 {
       font-weight: 700;
       font-size: 50px;
       line-height: 61px;
       color: #333333;
     }
+
     & > .icon {
       cursor: pointer;
       min-width: 37px;
@@ -58,33 +73,88 @@ const StyledLogin = styled.div`
       transform: translateY(6px);
     }
   }
+
   form {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    .wrapper-Button {
+
+    .buttons__wrapper {
       display: flex;
       align-items: center;
       gap: 25px;
     }
+
     span {
+      cursor: pointer;
       text-align: center;
       font-family: "Montserrat";
       font-style: normal;
       font-weight: 500;
       font-size: 18px;
       line-height: 22px;
-      color: #333333;
+      color: #333;
       margin-bottom: 20px;
-      &:last-of-type{
+
+      &:last-of-type {
+        cursor: default;
         text-align: start;
         margin-bottom: 0;
       }
     }
-    .social-buuton{
+
+    .social-button {
       display: flex;
       align-items: center;
       gap: 25px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    margin-bottom: 100px;
+
+    .top {
+      margin: 70px 0px 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h1 {
+        font-size: 40px;
+        line-height: 50px;
+      }
+
+      & > .icon {
+        cursor: pointer;
+        min-width: 37px;
+        min-height: 37px;
+        background-color: #000 !important;
+        transform: translateY(6px);
+      }
+    }
+
+    form {
+      .buttons__wrapper {
+        flex-wrap: wrap;
+      }
+
+      span {
+        font-size: 16px;
+      }
+
+      .social-button {
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    .top {
+      h1 {
+        max-width: 300px;
+        font-size: 28px;
+        line-height: 36px;
+      }
     }
   }
 `;

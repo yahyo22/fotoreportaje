@@ -1,20 +1,14 @@
 import styled from "styled-components";
+import { v4 } from "uuid";
 
-export default function SocialNetwork() {
+export default function SocialNetwork({ socialArr }: any) {
   return (
     <StyledSocial>
-      <div className="icon-div">
-        <i className="icon icon-VK"></i>
-      </div>
-      <div className="icon-div">
-        <i className="icon icon-facebook"></i>
-      </div>
-      <div className="icon-div">
-        <i className="icon icon-google"></i>
-      </div>
-      <div className="icon-div">
-        <i className="icon icon-instagram"></i>
-      </div>
+      {socialArr.map((i:string) => (
+        <div className="icon-div" key={v4()}>
+          <i className={"icon " + i}></i>
+        </div>
+      ))}
     </StyledSocial>
   );
 }
@@ -23,9 +17,10 @@ const StyledSocial = styled.div`
   margin-top: 15px;
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 15px;
 
   .icon-div {
+    cursor: pointer;
     width: 46px;
     height: 46px;
     display: grid;
