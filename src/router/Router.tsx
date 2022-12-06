@@ -1,14 +1,12 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 // Components
+import Main from "../pages/Main";
+import Events from "../pages/Events"
 import Login from "../pages/auth/login/Login";
+import Zavedeniye from "../pages/profile/Zavedeniye";
 import Register from "../pages/auth/register/Register";
 import OrderPhotographer from "../components/orderPhotographer/OrderPhotographer";
-import Main from "../pages/Main";
-import Navbar from "../components/navbar/Navbar";
-import Header from "../components/head/Header";
-import Zavedeniye from "../pages/profile/Zavedeniye";
-import Events from "../pages/Events"
 import CardAbout from "../components/cardAbout/CardAbout";
 export default function Router() {
   return (

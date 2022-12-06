@@ -32,6 +32,14 @@ export default function Input({ type, label, placeholder }: IInput) {
 const StyledInput = styled.div`
   position: relative;
 
+  label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    color: #333;
+  }
+
   input {
     padding: 17px 15px;
     width: 100%;

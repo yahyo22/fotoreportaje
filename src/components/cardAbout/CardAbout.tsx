@@ -238,7 +238,7 @@ const StyledCardAbout = styled.div`
     .arts__wrapper {
       margin-bottom: 100px;
       display: grid;
-      grid-template-columns: auto auto auto;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       grid-gap: 30px;
     }
   }
