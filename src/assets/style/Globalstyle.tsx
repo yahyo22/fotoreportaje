@@ -4,6 +4,8 @@ import "./font.css";
 import "./iconStyle.css";
 
 export const GlobalStyle = createGlobalStyle`
+        
+ 
     * {
         margin: 0;
         padding: 0;

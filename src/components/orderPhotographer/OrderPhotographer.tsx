@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { AuthStyle } from "../../pages/auth/AuthStyle";
 
 // Components
@@ -5,11 +6,12 @@ import Button from "../button/Button";
 import Input from "../input/Input";
 
 export default function OrderPhotographer() {
+  const navigate = useNavigate();
   return (
     <AuthStyle>
       <div className="top">
         <h1>Заказать фотографа</h1>
-        <i className="icon icon-close"></i>
+        <i onClick={() => navigate("/main")} className="icon icon-close"></i>
       </div>
       <form className="form__wrapper">
         <div className="input__wrapper">

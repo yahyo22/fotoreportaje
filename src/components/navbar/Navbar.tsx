@@ -34,7 +34,7 @@ export default function ({ props }: any) {
               <Link to="">Фотоотчеты</Link>
             </li>
             <li>
-              <Link to="" className={location === "/nav" ? "active" : ""}>
+              <Link to="/orderPhotographer" className={location === "/orderPhotographer" ? "active" : ""}>
                 Заказать фотосъемку
               </Link>
             </li>

@@ -8,10 +8,10 @@ import { useNavigate } from "react-router-dom";
 export default function Login() {
   const navigate = useNavigate()
   TabTitle("Login");
-  return (
+  return (  
     <StyledLogin>
       <div className="top">
-        <h1>Вход в личный кабинет</h1>
+        <h1 className="text-gray-300">Вход в личный кабинет</h1>
         <div className="icon icon-close"></div>
       </div>
       <form action="">
@@ -19,8 +19,8 @@ export default function Login() {
         <Input placeholder="Логин / E-mail / Телефон" type="text" />
         <Checkboxes />
         <div className="wrapper-Button">
-          <Button type="button" >Войти</Button>
-          <Button type="button">Зарегистрироваться</Button>
+          <Button type="button" onClick={()=>navigate("/main")}>Войти</Button>
+          <Button type="button" onClick={()=>navigate("/register")}>Зарегистрироваться</Button>
         </div>
         <span>Восстановить пароль</span>
         <span>Войти с помощью соц. сетей</span>

@@ -5,8 +5,6 @@ import Login from "../pages/auth/login/Login";
 import Register from "../pages/auth/register/Register";
 import OrderPhotographer from "../components/orderPhotographer/OrderPhotographer";
 import Main from "../pages/Main";
-import Navbar from "../components/navbar/Navbar";
-import Header from "../components/head/Header";
 import Zavedeniye from "../pages/profile/Zavedeniye";
 import Events from "../pages/Events"
 import CardAbout from "../components/cardAbout/CardAbout";

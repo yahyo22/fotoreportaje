@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { IButton } from "../../interface/interface";
-export default function Button({ children, type, icon, filter }: IButton) {
+export default function Button({ children, type, icon, filter,onClick }: IButton) {
   return (
     <>
-      <StyledButton
+      <StyledButton onClick={onClick}
         type={type}
         className={(icon ? "On" : "") + (filter ? " filter" : "")}
       >
