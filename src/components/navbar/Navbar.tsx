@@ -18,36 +18,6 @@ export default function ({ props }: any) {
   return (
     <StyledNavbar props={props}>
       <nav>
-<<<<<<< HEAD
-        <div>{props ? <img src={logo} /> : <img src={logo2} />}</div>
-        <div>
-          <ul className="nav-list">
-            <li>
-              <Link to="/main" className={location === "/main" ? "active" : ""}>
-                Главная
-              </Link>
-            </li>
-            <li>
-              <Link to="/event/karta">Заведения</Link>
-            </li>
-            <li>
-              <Link
-                to="/event"
-                className={location === "/event" ? "active" : ""}
-              >
-                События
-              </Link>
-            </li>
-            <li>
-              <Link to="">Фотоотчеты</Link>
-            </li>
-            <li>
-              <Link to="/orderPhotographer" className={location === "/orderPhotographer" ? "active" : ""}>
-                Заказать фотосъемку
-              </Link>
-            </li>
-          </ul>
-=======
         <div className="logo-brand">
           <Link to="/main">
             <div className="mobile-logo__wrapper"></div>
@@ -57,7 +27,6 @@ export default function ({ props }: any) {
               <img src={logo2} alt="brand-logo" />
             )}
           </Link>
->>>>>>> d87c9e2d1fe7b0dc8cb30e5a32d7a31b4fe2f09e
         </div>
         <div className={(isOpen ? "On " : "") + "nav-modal__wrapper"}></div>
         <ul className={(isOpen ? "On " : "") + "nav-list"}>

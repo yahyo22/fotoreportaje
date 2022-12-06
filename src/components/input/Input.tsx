@@ -58,6 +58,9 @@ const StyledInput = styled.div`
     &[type="password"] {
       padding: 17px 46px 17px 15px;
     }
+    &[type="file"]{
+      height: 460px;
+    }
   }
 
   .icon {

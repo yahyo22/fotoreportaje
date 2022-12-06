@@ -18,15 +18,9 @@ export default function Login() {
         <Input placeholder="Логин / E-mail / Телефон" type="text" />
         <Input placeholder="Логин / E-mail / Телефон" type="text" />
         <Checkboxes />
-<<<<<<< HEAD
-        <div className="wrapper-Button">
-          <Button type="button" onClick={()=>navigate("/main")}>Войти</Button>
-          <Button type="button" onClick={()=>navigate("/register")}>Зарегистрироваться</Button>
-=======
         <div className="buttons__wrapper">
           <Button type="button">Войти</Button>
           <Button type="button">Зарегистрироваться</Button>
->>>>>>> d87c9e2d1fe7b0dc8cb30e5a32d7a31b4fe2f09e
         </div>
         <span>Восстановить пароль</span>
         <span>Войти с помощью соц. сетей</span>
