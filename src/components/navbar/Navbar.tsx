@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled, { css } from "styled-components";
 
@@ -6,48 +6,16 @@ import styled, { css } from "styled-components";
 import logo2 from "../../assets/img/logo2.png";
 import logo from "../../assets/img/logo.png";
 import mobileLogo from "../../assets/img/mobileLogo.png";
+import Login from "../../pages/auth/login/Login";
 
 export default function ({ props }: any) {
   const location = useLocation().pathname;
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // &.On {
-  //   height: 100vh;
-  //   overflow: hidden;
-  // }
   return (
     <StyledNavbar props={props}>
       <nav>
-<<<<<<< HEAD
-        <div>{props ? <img src={logo} /> : <img src={logo2} />}</div>
-        <div>
-          <ul className="nav-list">
-            <li>
-              <Link to="/main" className={location === "/main" ? "active" : ""}>
-                Главная
-              </Link>
-            </li>
-            <li>
-              <Link to="/event/karta">Заведения</Link>
-            </li>
-            <li>
-              <Link
-                to="/event"
-                className={location === "/event" ? "active" : ""}
-              >
-                События
-              </Link>
-            </li>
-            <li>
-              <Link to="">Фотоотчеты</Link>
-            </li>
-            <li>
-              <Link to="/orderPhotographer" className={location === "/orderPhotographer" ? "active" : ""}>
-                Заказать фотосъемку
-              </Link>
-            </li>
-          </ul>
-=======
         <div className="logo-brand">
           <Link to="/main">
             <div className="mobile-logo__wrapper"></div>
@@ -57,7 +25,6 @@ export default function ({ props }: any) {
               <img src={logo2} alt="brand-logo" />
             )}
           </Link>
->>>>>>> d87c9e2d1fe7b0dc8cb30e5a32d7a31b4fe2f09e
         </div>
         <div className={(isOpen ? "On " : "") + "nav-modal__wrapper"}></div>
         <ul className={(isOpen ? "On " : "") + "nav-list"}>
@@ -91,8 +58,14 @@ export default function ({ props }: any) {
             </>
           ) : (
             <>
-              <div className=" icon icon-search"></div>
-              <div className="icon icon-profile"></div>
+              <div
+                className=" icon icon-search"
+                onClick={() => setIsModalOpen(true)}
+              ></div>
+              <div
+                className="icon icon-profile"
+                onClick={() => setIsModalOpen(true)}
+              ></div>
             </>
           )}
         </div>
@@ -105,6 +78,12 @@ export default function ({ props }: any) {
           <span></span>
         </div>
       </nav>
+
+      {isModalOpen && (
+        <div className="login_modal__wrapper">
+          <Login isModal={true} closeLogin={() => setIsModalOpen(false)}/>
+        </div>
+      )}
     </StyledNavbar>
   );
 }
@@ -381,6 +360,24 @@ const StyledNavbar = styled.div<any>`
           }
         }
       }
+    }
+  }
+
+  .login_modal__wrapper {
+    margin: 0 auto;
+    max-width: 800px;
+    margin-top: -100px;
+    overflow-y: hidden;
+
+    &::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #272727a9;
+      z-index: 10;
     }
   }
 

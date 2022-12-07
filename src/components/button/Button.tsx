@@ -2,19 +2,6 @@ import styled from "styled-components";
 
 // Interface
 import { IButton } from "../../interface/interface";
-<<<<<<< HEAD
-export default function Button({ children, type, icon, filter,onClick }: IButton) {
-  return (
-    <>
-      <StyledButton onClick={onClick}
-        type={type}
-        className={(icon ? "On" : "") + (filter ? " filter" : "")}
-      >
-        {icon ? <div className={"icon " + icon}></div> : null}
-        {children}
-      </StyledButton>
-    </>
-=======
 
 export default function Button({
   children,
@@ -37,7 +24,6 @@ export default function Button({
       {icon ? <div className={"icon " + icon}></div> : null}
       {children}
     </StyledButton>
->>>>>>> d87c9e2d1fe7b0dc8cb30e5a32d7a31b4fe2f09e
   );
 }
 const StyledButton = styled.button`

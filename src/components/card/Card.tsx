@@ -15,7 +15,7 @@ export default function Card() {
       </div>
       <div className="art-content">
         <h6 className="">АРТ ПРОСТРАНСТВО</h6>
-        <h2>Klumba space</h2> 
+        <h2>Klumba space</h2>
         <p>Кузнецкий проспект, 55 +7 999 999 9090</p>
       </div>
     </StyledCard>
@@ -24,11 +24,19 @@ export default function Card() {
 
 const StyledCard = styled.div`
   padding: 20px;
+  
+  grid-column: span 1;
+  grid-column: span 1;
+  grid-row: span 1;
+
+  width: 450px;
+  height: 450px;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  height: 400px;
+
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 53.65%, #000000 100%),
     url(${cardImg}) no-repeat center;
   background-size: cover;
@@ -80,5 +88,15 @@ const StyledCard = styled.div`
       font-size: 18px !important;
       line-height: 150%;
     }
+  }
+
+  @media (max-width: 835px) {
+  width: 340px;
+  height: 340px;
+  }
+
+  @media (max-width: 390px) {
+  width: 167px;
+  height: 167px;
   }
 `;

@@ -94,11 +94,21 @@ const StyledGrid = styled.div`
       }
     }
   }
+
   .arts__wrapper {
     margin-top: 40px;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 30px;
     grid-row-gap: 20px;
+  }
+
+  @media (max-width: 835px) {
+    .arts__wrapper {
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 20px;
+      grid-row-gap: 20px;
+    }
   }
 `;

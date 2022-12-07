@@ -1,32 +1,32 @@
-import React from "react";
-import Button from "../../../components/button/Button";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+
+// Components
+import Button from "../../../components/button/Button";
 import Input from "../../../components/input/Input";
 import Checkboxes from "../../../components/input/Checkbox";
 import { TabTitle } from "../../../utils/Utils";
-import { useNavigate } from "react-router-dom";
-export default function Login() {
-  const navigate = useNavigate()
+
+export default function Login({ isModal, closeLogin }: any) {
+  const navigate = useNavigate();
   TabTitle("Login");
-  return (  
-    <StyledLogin>
+  return (
+    <StyledLogin className={isModal ? "modal" : ""}>
       <div className="top">
         <h1 className="text-gray-300">Вход в личный кабинет</h1>
-        <div className="icon icon-close"></div>
+        <div className="icon icon-close" onClick={closeLogin}></div>
       </div>
       <form action="">
         <Input placeholder="Логин / E-mail / Телефон" type="text" />
-        <Input placeholder="Логин / E-mail / Телефон" type="text" />
+        <Input placeholder="Пароль" type="password" />
         <Checkboxes />
-<<<<<<< HEAD
-        <div className="wrapper-Button">
-          <Button type="button" onClick={()=>navigate("/main")}>Войти</Button>
-          <Button type="button" onClick={()=>navigate("/register")}>Зарегистрироваться</Button>
-=======
         <div className="buttons__wrapper">
-          <Button type="button">Войти</Button>
-          <Button type="button">Зарегистрироваться</Button>
->>>>>>> d87c9e2d1fe7b0dc8cb30e5a32d7a31b4fe2f09e
+          <Button type="button" onClick={() => navigate("/main")}>
+            Войти
+          </Button>
+          <Button type="button" onClick={() => navigate("/register")}>
+            Зарегистрироваться
+          </Button>
         </div>
         <span>Восстановить пароль</span>
         <span>Войти с помощью соц. сетей</span>
@@ -62,7 +62,7 @@ const StyledLogin = styled.div`
       font-weight: 700;
       font-size: 50px;
       line-height: 61px;
-      color: #333333;
+      color: #333;
     }
 
     & > .icon {
@@ -106,7 +106,26 @@ const StyledLogin = styled.div`
     .social-button {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       gap: 25px;
+    }
+  }
+
+  &.modal {
+    position: absolute;
+    padding: 70px;
+    z-index: 500 !important;
+
+    .top {
+      margin: 0px;
+
+      h1 {
+        margin: 60px 0px;
+      }
+
+      .icon {
+        margin-bottom: 200px;
+      }
     }
   }
 
