@@ -40,7 +40,7 @@ export default function Footer() {
               <Link to="/event">События</Link>
             </li>
             <li>
-              <Link to="/event/karta/fotootchot">Фотоотчеты</Link>
+              <Link to="/fotoOtchots">Фотоотчеты</Link>
             </li>
           </ul>
           <ul>

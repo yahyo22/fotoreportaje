@@ -1,9 +1,12 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+
 // imges
 import Rockstar from "../../assets/img/Rockstar.png";
+
+// Components
 import Navbar from "../navbar/Navbar";
+
 export default function Header({ props }: any) {
   return (
     <StyledHeader>

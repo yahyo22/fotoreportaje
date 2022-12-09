@@ -42,7 +42,12 @@ export default function ({ props }: any) {
             </Link>
           </li>
           <li>
-            <Link to="">Фотоотчеты</Link>
+            <Link
+              to="/fotoOtchots"
+              className={location === "/fotoOtchots" ? "active" : ""}
+            >
+              Фотоотчеты
+            </Link>
           </li>
           <li>
             <Link to="" className={location === "/nav" ? "active" : ""}>
@@ -81,7 +86,7 @@ export default function ({ props }: any) {
 
       {isModalOpen && (
         <div className="login_modal__wrapper">
-          <Login isModal={true} closeLogin={() => setIsModalOpen(false)}/>
+          <Login isModal={true} closeLogin={() => setIsModalOpen(false)} />
         </div>
       )}
     </StyledNavbar>

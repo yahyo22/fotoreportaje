@@ -3,14 +3,13 @@ import styled from "styled-components";
 
 // Components
 import Footer from "../../components/footer/Footer";
-import Navbar from "../../components/navbar/Navbar";
+import Header from "../../components/head/Header";
 
-export default function UserPage() {
+export default function MainPage() {
   return (
     <StyledUserPage>
+      <Header />
       <div className="container">
-        <Navbar props={true} />
-        
         <Outlet />
         <Footer />
       </div>

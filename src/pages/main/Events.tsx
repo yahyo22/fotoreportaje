@@ -2,13 +2,13 @@ import { useState } from "react";
 import styled from "styled-components";
 
 // Components
-import Card from "../components/card/Card";
-import Header from "../components/head/Header";
-import Select from "../components/select/Select";
-import Button from "../components/button/Button";
-import Footer from "../components/footer/Footer";
+import Card from "../../components/card/Card";
+import Header from "../../components/head/Header";
+import Select from "../../components/select/Select";
+import Button from "../../components/button/Button";
+import Footer from "../../components/footer/Footer";
 
-import { TabTitle } from "../utils/Utils";
+import { TabTitle } from "../../utils/Utils";
 
 export default function Events() {
   TabTitle("Event");
@@ -27,57 +27,53 @@ export default function Events() {
 
   return (
     <StyledEvent>
-      <Header props={false} />
-      <div className="container">
-        <div className="center">
-          <h1>События</h1>
-          <div className="filter__wrapper">
-            <div className="filter">
-              <Select list={[""]} placeholder="Дата" />
-            </div>
-            <div className="filter">
-              <Select
-                list={locationArr}
-                placeholder="Поиск по местам"
-                multiple={true}
-              />
-            </div>
-            <div className="button">
-              <div className="first">
-                <Button
-                  type="button"
-                  filter={true}
-                  btnFilter={btnFilter}
-                  onClick={() => setBtnFilter("Платно")}
-                >
-                  Платно
-                </Button>
-              </div>
-              <div className="last">
-                <Button
-                  type="button"
-                  filter={true}
-                  btnFilter={btnFilter}
-                  onClick={() => setBtnFilter("Бесплатно")}
-                >
-                  Бесплатно
-                </Button>
-              </div>
-            </div>
+      <div className="center">
+        <h1>События</h1>
+        <div className="filter__wrapper">
+          <div className="filter">
+            <Select list={[""]} placeholder="Дата" />
           </div>
-          <div className="arts__wrapper">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+          <div className="filter">
+            <Select
+              list={locationArr}
+              placeholder="Поиск по местам"
+              multiple={true}
+            />
+          </div>
+          <div className="button">
+            <div className="first">
+              <Button
+                type="button"
+                filter={true}
+                btnFilter={btnFilter}
+                onClick={() => setBtnFilter("Платно")}
+              >
+                Платно
+              </Button>
+            </div>
+            <div className="last">
+              <Button
+                type="button"
+                filter={true}
+                btnFilter={btnFilter}
+                onClick={() => setBtnFilter("Бесплатно")}
+              >
+                Бесплатно
+              </Button>
+            </div>
           </div>
         </div>
-        <Footer />
+        <div className="arts__wrapper">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
       </div>
     </StyledEvent>
   );

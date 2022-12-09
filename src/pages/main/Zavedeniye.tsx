@@ -5,87 +5,82 @@ import Kottabola from "../../assets/img/Kottabola.png";
 
 // Components
 import SimpleMap from "../../components/map/Map";
-import Navbar from "../../components/navbar/Navbar";
 import Button from "../../components/button/Button";
-import Footer from "../../components/footer/Footer";
 import SocialNetwork from "../../components/social-network/SocialNetwork";
 
 export default function Zavedeniye() {
   return (
     <StyledZavedeliye>
-      <div className="container">
-        <Navbar props={true} />
-        <main>
-          <div>
-            <img src={Kottabola} alt="Заведения" />
+      <main>
+        <div>
+          <img src={Kottabola} alt="Заведения" />
+        </div>
+        <div className="right">
+          <p>Вечеринки • Концерты</p>
+          <h1>
+            Испанская группа DVICIO выступит с единственным концертом в Кемерово
+          </h1>
+          <p>28 июля 2020, в 18:00</p>
+          <p>Арт пространство “Klumba Space”; пр. Кузнецкий, 55.</p>
+          <p>От 1000р. до 5000р.</p>
+          <div className="buttons__wrapper">
+            <div className="button__wrapper">
+              <Button type="button">Купить билет</Button>
+            </div>
+            <div className="button__wrapper">
+              <Button type="button">Поделиться</Button>
+            </div>
           </div>
-          <div className="right">
-            <p>Вечеринки • Концерты</p>
-            <h1>
-              Испанская группа DVICIO выступит с единственным концертом в
-              Кемерово
-            </h1>
-            <p>28 июля 2020, в 18:00</p>
-            <p>Арт пространство “Klumba Space”; пр. Кузнецкий, 55.</p>
-            <p>От 1000р. до 5000р.</p>
-            <div className="buttons__wrapper">
-              <div className="button__wrapper">
-                <Button type="button">Купить билет</Button>
+        </div>
+      </main>
+      <section>
+        <div className="event">
+          <h1>О событии</h1>
+          <p>
+            Самая популярная испанская группа впервые посетит Россию с
+            единственным концертом в рамках тура DVICIO ON TOUR в поддержку
+            нового альбома. 25 марта 2021г. в московском клубе “Известия Hall”
+            исполнится мечта российских поклонников группы, число которых растет
+            с каждым днем. Участники квинтета с нетерпением ждут этой встречи и
+            обещают удивить публику новыми хитами, а также исполнить уже
+            полюбившиеся песни, среди которых Enamorate, Paraíso, Qué Tienes Tú,
+            Brasilera, 5 Sentidos, Dosis
+          </p>
+        </div>
+        <div className="map">
+          <h1>Контакты</h1>
+          <div className="contacts__wrapper">
+            <SimpleMap />
+            <div className="contacts">
+              <div className="address">
+                <h2>Адрес: </h2>
+                <p>Кузнецкий проспект, 55</p>
               </div>
-              <div className="button__wrapper">
-                <Button type="button">Поделиться</Button>
+              <div className="phone">
+                <h2>Телефон:</h2>
+                <p>+7 999 999 9090</p>
+              </div>
+              <div className="social">
+                <h2>Соц. сети</h2>
+                <SocialNetwork
+                  socialArr={[
+                    "icon-VK",
+                    "icon-facebook",
+                    "icon-google",
+                    "icon-instagram",
+                  ]}
+                />
               </div>
             </div>
           </div>
-        </main>
-        <section>
-          <div className="event">
-            <h1>О событии</h1>
-            <p>
-              Самая популярная испанская группа впервые посетит Россию с
-              единственным концертом в рамках тура DVICIO ON TOUR в поддержку
-              нового альбома. 25 марта 2021г. в московском клубе “Известия Hall”
-              исполнится мечта российских поклонников группы, число которых
-              растет с каждым днем. Участники квинтета с нетерпением ждут этой
-              встречи и обещают удивить публику новыми хитами, а также исполнить
-              уже полюбившиеся песни, среди которых Enamorate, Paraíso, Qué
-              Tienes Tú, Brasilera, 5 Sentidos, Dosis
-            </p>
-          </div>
-          <div className="map">
-            <h1>Контакты</h1>
-            <div className="contacts__wrapper">
-              <SimpleMap />
-              <div className="contacts">
-                <div className="address">
-                  <h2>Адрес: </h2>
-                  <p>Кузнецкий проспект, 55</p>
-                </div>
-                <div className="phone">
-                  <h2>Телефон:</h2>
-                  <p>+7 999 999 9090</p>
-                </div>
-                <div className="social">
-                  <h2>Соц. сети</h2>
-                  <SocialNetwork
-                    socialArr={[
-                      "icon-VK",
-                      "icon-facebook",
-                      "icon-google",
-                      "icon-instagram",
-                    ]}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <Footer />
-      </div>
+        </div>
+      </section>
     </StyledZavedeliye>
   );
 }
 const StyledZavedeliye = styled.div`
+  margin-top: 60px;
+
   main {
     display: flex;
     align-items: flex-start;

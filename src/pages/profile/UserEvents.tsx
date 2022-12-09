@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Card from "../components/card/Card";
+import Card from "../../components/card/Card";
 
 export default function UserEvents() {
   return (

@@ -62,7 +62,9 @@ export default function Select({
     <StyledSelect>
       <button
         type="button"
-        className={(isOpen ? "On " : "") + "select"}
+        className={
+          (multiple ? "multiple " : "") + (isOpen ? "On " : "") + "select"
+        }
         onClick={() => setIsOpen((p) => !p)}
       >
         <span>{multiple ? multipleValues() : currentValue}</span>
@@ -144,6 +146,10 @@ const StyledSelect = styled.div`
       &:after {
         transform: rotate(-180deg) translateY(50%);
       }
+    }
+
+    &.multiple {
+      padding: 17px 30px 17px 15px;
     }
   }
 

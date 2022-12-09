@@ -1,11 +1,11 @@
 import styled from "styled-components";
+import { v4 } from "uuid";
 
 // images
-import userPhoto1 from "../assets/img/userPhoto1.png";
-import userPhoto2 from "../assets/img/userPhoto2.png";
-import userPhoto3 from "../assets/img/userPhoto3.png";
-import userPhoto4 from "../assets/img/userPhoto4.png";
-import UserEvents from "./UserEvents";
+import userPhoto1 from "../../assets/img/userPhoto1.png";
+import userPhoto2 from "../../assets/img/userPhoto2.png";
+import userPhoto3 from "../../assets/img/userPhoto3.png";
+import userPhoto4 from "../../assets/img/userPhoto4.png";
 
 export default function UsersPhotos() {
   const imgArr: typeof userPhoto1 = [
@@ -20,13 +20,14 @@ export default function UsersPhotos() {
       <div className="images__wrapper">
         {imgArr.map((i: typeof userPhoto1, idx: number) => (
           <div
+            key={v4()}
             className={(idx === 1 ? "on " : "") + "current-img"}
             style={{ background: `url(${i}) no-repeat center` }}
           ></div>
         ))}
       </div>
 
-      <UserEvents />
+      {/* <UserEvents /> */}
     </StyledUsersPhotos>
   );
 }

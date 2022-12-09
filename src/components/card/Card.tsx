@@ -1,14 +1,15 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 // Images
 import cardImg from "../../assets/img/card.png";
 
 export default function Card() {
+  const location = useLocation().pathname;
   const navigate = useNavigate();
 
   return (
-    <StyledCard onClick={() => navigate("/event/karta/fotootchot")}>
+    <StyledCard onClick={() => {location === "/fotoOtchots" ? navigate("/fotoOtchots/kartochka") : navigate("/event/karta/fotootchot")}}>
       <div className="like__wrapper">
         <i className="icon icon-like"></i>
         <p>33</p>
@@ -24,13 +25,12 @@ export default function Card() {
 
 const StyledCard = styled.div`
   padding: 20px;
-  
+
   grid-column: span 1;
-  grid-column: span 1;
+  grid-column: span;
   grid-row: span 1;
 
-  width: 450px;
-  height: 450px;
+  height: 480px;
 
   display: flex;
   flex-direction: column;
@@ -73,7 +73,7 @@ const StyledCard = styled.div`
     color: #fff;
     font-weight: 500;
 
-    h5 {
+    h6 {
       font-size: 15px;
       line-height: 18px;
     }
@@ -90,13 +90,123 @@ const StyledCard = styled.div`
     }
   }
 
+  @media (max-width: 1700px) {
+    height: 400px;
+  }
+
+  @media (max-width: 1700px) {
+    height: 370px;
+  }
+
   @media (max-width: 835px) {
-  width: 340px;
-  height: 340px;
+    height: 340px;
+
+    .like__wrapper {
+      & > .icon {
+        min-width: 15px;
+        min-height: 15px;
+      }
+
+      p {
+        line-height: 16px;
+        font-size: 15.8275px;
+      }
+    }
+
+    .art-content {
+      max-width: 190px;
+
+      h6 {
+        font-size: 12px;
+        line-height: 16px;
+      }
+
+      h2 {
+        font-size: 22px;
+        line-height: 22px;
+      }
+
+      p {
+        margin-top: 0px;
+        font-size: 15px !important;
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 10px;
+    height: 260px;
+
+    .like__wrapper {
+      padding: 4px 10px;
+
+      & > .icon {
+        min-width: 13px;
+        min-height: 13px;
+      }
+
+      p {
+        line-height: 13px;
+        font-size: 10.8275px;
+      }
+    }
+
+    .art-content {
+      h6 {
+        font-size: 10px;
+        line-height: 13px;
+      }
+
+      h2 {
+        font-size: 18px;
+        line-height: 21px;
+      }
+
+      p {
+        margin-top: 0px;
+        font-size: 14px !important;
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    height: 200px;
+
+    .like__wrapper {
+      padding: 4px 10px;
+
+      & > .icon {
+        min-width: 10px;
+        min-height: 10px;
+      }
+
+      p {
+        line-height: 10px;
+        font-size: 8px;
+      }
+    }
+
+    .art-content {
+      max-width: 120px;
+      gap: 0px;
+
+      h6 {
+        font-size: 7px;
+        line-height: 10px;
+      }
+
+      h2 {
+        font-size: 14px;
+        line-height: 21px;
+      }
+
+      p {
+        font-size: 9px !important;
+      }
+    }
   }
 
   @media (max-width: 390px) {
-  width: 167px;
-  height: 167px;
+    height: 167px;
   }
 `;

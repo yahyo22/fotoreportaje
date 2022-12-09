@@ -96,15 +96,23 @@ const StyledGrid = styled.div`
   }
 
   .arts__wrapper {
+    margin: 0 auto;
     margin-top: 40px;
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 30px;
-    grid-row-gap: 20px;
+    grid-column-gap: 40px;
+    grid-row-gap: 40px;
+  }
+  
+  @media (max-width: 1700px) {
+    .arts__wrapper {
+      grid-column-gap: 25px;
+      grid-row-gap: 25px;
+    }
   }
 
-  @media (max-width: 835px) {
+  @media (max-width: 1000px) {
     .arts__wrapper {
       grid-template-columns: 1fr 1fr;
       grid-column-gap: 20px;
