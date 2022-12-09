@@ -5,17 +5,17 @@ import { v4 } from "uuid";
 // Interface
 import { IInput } from "../../interface/interface";
 
-export default function Input({ type, label, placeholder }: IInput) {
+export default function Input({ type, label, placeholder,onChange }: IInput) {
   const uuid: string = v4();
   const [inputType, setInputType] = useState<string>(type);
 
   return (
     <StyledInput>
-      {label ? <label htmlFor={uuid}></label> : null}
-      <input type={inputType} placeholder={placeholder} id={uuid} />
+      {label ? <label htmlFor={uuid}>{label}</label> : null}
+      <input type={inputType} placeholder={placeholder} id={uuid} onChange={onChange} />
       {type === "password" ? (
         <i
-          className={(inputType === "text" ? "On " : "") + "icon password"}
+          className={(inputType === "text" ? "On " : "")+ (label ? " label " : "") + "icon password"}
           onClick={() =>
             inputType === "text"
               ? setInputType("password")
@@ -32,7 +32,15 @@ export default function Input({ type, label, placeholder }: IInput) {
 const StyledInput = styled.div`
   position: relative;
 
+  label {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    color: #333;
+  }
+
   input {
+    margin-top:7px;
     padding: 17px 15px;
     width: 100%;
     border: none;
@@ -59,7 +67,7 @@ const StyledInput = styled.div`
       padding: 17px 46px 17px 15px;
     }
     &[type="file"]{
-      height: 460px;
+      height: 450px;
     }
   }
 
@@ -85,7 +93,7 @@ const StyledInput = styled.div`
       background: #333;
       border-radius: 100%;
     }
-
+   
     &::before {
       content: "";
       position: absolute;
@@ -99,7 +107,9 @@ const StyledInput = styled.div`
       transition: 200ms ease-in-out;
       z-index: 1;
     }
-
+    &.label{
+      transform: translateY(7px);
+    }
     &.On::before {
       width: 7px;
       height: 0px;

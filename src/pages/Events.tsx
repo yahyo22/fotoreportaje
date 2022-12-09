@@ -44,12 +44,22 @@ export default function Events() {
             </div>
             <div className="button">
               <div className="first">
-                <Button type="button" filter={true} btnFilter={btnFilter} onClick={() => setBtnFilter("Платно")}>
+                <Button
+                  type="button"
+                  filter={true}
+                  btnFilter={btnFilter}
+                  onClick={() => setBtnFilter("Платно")}
+                >
                   Платно
                 </Button>
               </div>
               <div className="last">
-                <Button type="button" filter={true} btnFilter={btnFilter} onClick={() => setBtnFilter("Бесплатно")}>
+                <Button
+                  type="button"
+                  filter={true}
+                  btnFilter={btnFilter}
+                  onClick={() => setBtnFilter("Бесплатно")}
+                >
                   Бесплатно
                 </Button>
               </div>
@@ -116,13 +126,10 @@ const StyledEvent = styled.div`
     }
     .arts__wrapper {
       margin-top: 40px;
-      /* display: grid;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       grid-column-gap: 30px;
       grid-row-gap: 20px;
-      grid-template-columns: auto auto auto; */
-      display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
     }
   }
 

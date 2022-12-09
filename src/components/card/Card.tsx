@@ -28,14 +28,9 @@ const StyledCard = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  /* max-width: 430px; */
-  /* min-width: 320px; */
-  /* width: auto; */
-  /* width: 100%; */
-  width: 430px;
-  height: 430px;
+  height: 400px;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 53.65%, #000000 100%),
-    url(${cardImg}), center no-repeat;
+    url(${cardImg}) no-repeat center;
   background-size: cover;
 
   .like__wrapper {

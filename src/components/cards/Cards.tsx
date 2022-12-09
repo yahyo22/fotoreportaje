@@ -97,8 +97,8 @@ const StyledGrid = styled.div`
   .arts__wrapper {
     margin-top: 40px;
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     grid-column-gap: 30px;
     grid-row-gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
   }
 `;

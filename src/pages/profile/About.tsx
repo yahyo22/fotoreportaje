@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Input from "../../components/input/Input";
 import Navbar from "../../components/navbar/Navbar";
 import styled from "styled-components";
 import MIninavbar from "../../components/navbar/MIninavbar";
 export default function About() {
+  const [img, setImg] = useState<string>("");
   return (
     <StyledAbout>
       <div className="container">
@@ -15,12 +16,20 @@ export default function About() {
         </div>
         <div className="wrapper">
           <section className="foto">
-            <Input type="file"/>
+            <img src={img ? img : ""} alt="" />
+            <div>
+            <Input
+              type="file"
+              onChange={(e: any) =>
+                setImg(URL.createObjectURL(e.target.files[0]))
+              }
+            />
+            </div>
           </section>
           <section className="left">
             <div>
               <Input type="text" label="Имя:" placeholder="Матвей" />
-            </div>  
+            </div>
             <div>
               <Input type="text" label="Пол:" placeholder="Мужской" />
             </div>
@@ -32,11 +41,7 @@ export default function About() {
               />
             </div>
             <div>
-              <Input
-                type="password"
-                label="Пароль:"
-                placeholder="••••••••••••••••"
-              />
+              <Input type="password" label="Пароль:" placeholder="" />
             </div>
           </section>
           <section className="right">
@@ -71,25 +76,36 @@ const StyledAbout = styled.div`
     display: flex;
     align-items: flex-start;
     gap: 35px;
-    .foto {
-      width: 480px;
-    }
-    .left{
-        display: flex;
-        flex-direction: column;
-        gap:35px;
-        div{
-            width: 400px;
+    .foto{
+        border: 1px solid black;
+        position: relative;
+      img {
+        overflow: hidden;
+        max-width: 450px;
+        max-height: 450px;
+      }
+      div{
+        opacity: 0;
+        top: 0;
+         position:absolute;
         }
+
     }
-    .right{
-        display: flex;
-        flex-direction: column;
-        gap:35px;
-        div{
-            
-            width: 400px;
-        }
+    .left {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      div {
+        width: 400px;
+      }
+    }
+    .right {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      div {
+        width: 400px;
+      }
     }
   }
 `;
