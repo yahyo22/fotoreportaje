@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styled, { css } from "styled-components";
 
@@ -6,15 +6,13 @@ import styled, { css } from "styled-components";
 import logo2 from "../../assets/img/logo2.png";
 import logo from "../../assets/img/logo.png";
 import mobileLogo from "../../assets/img/mobileLogo.png";
+import Login from "../../pages/auth/login/Login";
 
 export default function ({ props }: any) {
   const location = useLocation().pathname;
   const [isOpen, setIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // &.On {
-  //   height: 100vh;
-  //   overflow: hidden;
-  // }
   return (
     <StyledNavbar props={props}>
       <nav>
@@ -60,8 +58,14 @@ export default function ({ props }: any) {
             </>
           ) : (
             <>
-              <div className=" icon icon-search"></div>
-              <div className="icon icon-profile"></div>
+              <div
+                className=" icon icon-search"
+                onClick={() => setIsModalOpen(true)}
+              ></div>
+              <div
+                className="icon icon-profile"
+                onClick={() => setIsModalOpen(true)}
+              ></div>
             </>
           )}
         </div>
@@ -74,6 +78,12 @@ export default function ({ props }: any) {
           <span></span>
         </div>
       </nav>
+
+      {isModalOpen && (
+        <div className="login_modal__wrapper">
+          <Login isModal={true} closeLogin={() => setIsModalOpen(false)}/>
+        </div>
+      )}
     </StyledNavbar>
   );
 }
@@ -350,6 +360,24 @@ const StyledNavbar = styled.div<any>`
           }
         }
       }
+    }
+  }
+
+  .login_modal__wrapper {
+    margin: 0 auto;
+    max-width: 800px;
+    margin-top: -100px;
+    overflow-y: hidden;
+
+    &::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #272727a9;
+      z-index: 10;
     }
   }
 
