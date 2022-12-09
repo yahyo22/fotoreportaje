@@ -15,8 +15,13 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     .container {
+<<<<<<< HEAD
         max-width: 1555px;
         padding: 0px 15px;
+=======
+        max-width: 1300px;
+        padding: 0px 16px;
+>>>>>>> c8604d2d31d4604eee776831b50cec67e71cefc4
         margin: 0 auto; 
 
         @media (max-width: 1700px) {

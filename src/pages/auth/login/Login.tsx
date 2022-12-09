@@ -21,12 +21,17 @@ export default function Login({ isModal, closeLogin }: any) {
         <Input placeholder="Пароль" type="password" />
         <Checkboxes />
         <div className="buttons__wrapper">
+<<<<<<< HEAD
+          <Button type="button">Войти</Button>
+          <Button type="button">Зарегистрироваться</Button>
+=======
           <Button type="button" onClick={() => navigate("/main")}>
             Войти
           </Button>
           <Button type="button" onClick={() => navigate("/register")}>
             Зарегистрироваться
           </Button>
+>>>>>>> 19e229ecf4a459aff4801bef02ffcabdaa9d77f7
         </div>
         <span>Восстановить пароль</span>
         <span>Войти с помощью соц. сетей</span>

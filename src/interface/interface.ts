@@ -2,6 +2,7 @@ export interface IInput {
   type: string;
   label?: string;
   placeholder?: string;
+  onChange?:React.ChangeEventHandler<HTMLInputElement> | undefined;
 }
 
 export interface ISelect {
@@ -15,6 +16,6 @@ export interface IButton {
   children: React.ReactNode;
   filter?: Boolean;
   icon?:string;
+  onClick?:React.MouseEventHandler<HTMLButtonElement> | undefined;
   btnFilter?: String;
-  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }
