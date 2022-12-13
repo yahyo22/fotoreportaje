@@ -120,12 +120,34 @@ const StyledEvent = styled.div`
         }
       }
     }
+
     .arts__wrapper {
+      margin: 0 auto;
       margin-top: 40px;
+      width: 100%;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      grid-column-gap: 30px;
-      grid-row-gap: 20px;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 40px;
+      grid-row-gap: 40px;
+    }
+  }
+
+  @media (max-width: 1700px) {
+    .center {
+      .arts__wrapper {
+        grid-column-gap: 25px;
+        grid-row-gap: 25px;
+      }
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .center {
+      .arts__wrapper {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+      }
     }
   }
 

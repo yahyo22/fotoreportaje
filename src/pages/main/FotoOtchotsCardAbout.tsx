@@ -287,4 +287,47 @@ const StyledFotoOtchotsCardAbout = styled.div<typeof userPhoto4>`
       }
     }
   }
+
+  @media (max-width: 530px) {
+    .carrousel__wrapper {
+      .current_image__wrapper {
+        .image {
+          width: 100%;
+          height: 200px;
+
+          .slider__wrapper {
+            width: 40px;
+
+            &::before {
+              width: 20px;
+              height: 20px;
+              border-bottom: 2px solid #fff;
+              border-right: 2px solid #fff;
+            }
+          }
+
+          &:hover {
+            .slider__wrapper {
+              width: 40px;
+            }
+          }
+        }
+        .buttons__wrapper {
+          margin-top: 18px;
+          gap: 15px;
+
+          .button {
+            width: 230px;
+          }
+        }
+      }
+
+      .more_images__wrapper {
+        img {
+          width: 100%;
+          height: 200px;
+        }
+      }
+    }
+  }
 `;

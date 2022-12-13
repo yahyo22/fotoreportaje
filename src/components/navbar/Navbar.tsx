@@ -3,15 +3,21 @@ import { Link, useLocation } from "react-router-dom";
 import styled, { css } from "styled-components";
 
 // logo
-import logo2 from "../../assets/img/logo2.png";
 import logo from "../../assets/img/logo.png";
+import logo2 from "../../assets/img/logo2.png";
 import mobileLogo from "../../assets/img/mobileLogo.png";
+
+// Components
 import Login from "../../pages/auth/login/Login";
 
 export default function ({ props }: any) {
   const location = useLocation().pathname;
   const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  function modalClose() {
+    setIsOpen(false);
+  }
 
   return (
     <StyledNavbar props={props}>
@@ -29,7 +35,7 @@ export default function ({ props }: any) {
         <div className={(isOpen ? "On " : "") + "nav-modal__wrapper"}></div>
         <ul className={(isOpen ? "On " : "") + "nav-list"}>
           <li>
-            <Link to="/main" className={location === "/main" ? "active" : ""}>
+            <Link to="/main" onClick={modalClose} className={location === "/main" ? "active" : ""}>
               Главная
             </Link>
           </li>
@@ -37,20 +43,20 @@ export default function ({ props }: any) {
             <Link to="/event/karta">Заведения</Link>
           </li>
           <li>
-            <Link to="/event" className={location === "/event" ? "active" : ""}>
+            <Link to="/event" onClick={modalClose} className={location === "/event" ? "active" : ""}>
               События
             </Link>
           </li>
           <li>
             <Link
               to="/fotoOtchots"
-              className={location === "/fotoOtchots" ? "active" : ""}
+              onClick={modalClose} className={location === "/fotoOtchots" ? "active" : ""}
             >
               Фотоотчеты
             </Link>
           </li>
           <li>
-            <Link to="" className={location === "/nav" ? "active" : ""}>
+            <Link to="" onClick={modalClose} className={location === "/nav" ? "active" : ""}>
               Заказать фотосъемку
             </Link>
           </li>

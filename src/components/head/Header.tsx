@@ -29,7 +29,8 @@ export default function Header({ props }: any) {
   );
 }
 const StyledHeader = styled.div`
-  height: 100vh;
+  height: 800px;
+  position: relative;
   background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0.35) 0%,
@@ -42,7 +43,7 @@ const StyledHeader = styled.div`
   background-position: center;
 
   main {
-    height: 76vh;
+    margin-top: 140px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -98,6 +99,10 @@ const StyledHeader = styled.div`
     }
   }
 
+  @media (max-height: 800px) {
+    height: 100vh;
+  }
+
   @media (max-width: 610px) {
     main {
       p {
@@ -122,7 +127,13 @@ const StyledHeader = styled.div`
   }
 
   @media (max-width: 472px) {
+    height: 376px;
+
     main {
+      position: absolute;
+      bottom: 30px;
+      left: 16px;
+
       p {
         font-size: 14px;
       }
@@ -134,15 +145,16 @@ const StyledHeader = styled.div`
     }
   }
 
-  @media (max-width: 472px) {
+  @media (max-width: 360px) {
+    max-height: 376px;
     main {
       p {
         font-size: 10px;
       }
 
       h1 {
-        font-size: 28px;
-        line-height: 36px;
+        font-size: 24px;
+        line-height: 26px;
       }
     }
   }
